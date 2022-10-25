@@ -7,3 +7,47 @@ html{
   margin: 0;
   padding: 0;
 }
+
+img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+//* Home
+.home{
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(177,210,231,1) 100%); 
+  height: 100vh;
+}
+
+#homeNavigation{
+  width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  column-gap: 100px;
+
+  ul{
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    width: 100%;
+  }
+  
+}
+
+#nuoLogo {
+  width: 150px;
+  margin-left: 5px;
+}
+
+#moreToCome{
+  background-color: black;
+  color: #ffffff;
+  display: block;
+  margin-left: auto;
+  margin-right: 5px;
+}
+
