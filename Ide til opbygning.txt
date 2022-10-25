@@ -1,0 +1,23 @@
+App
+ - Home
+  - WhatWeDo (samme komponent)
+  - Maintainable (samme komponent)
+  - GetInTouch
+
+
+
+Mappestruktur: 
+
+src -> assets -> scss
+
+src -> assets -> css
+
+src -> assets -> components
+
+src -> assets -> pages
+
+src -> assets -> images -> desktop
+
+src -> assets -> images -> mobile
+
+
