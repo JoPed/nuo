@@ -1,3 +1,4 @@
+import "bootstrap/dist/css/bootstrap-grid.min.css";
 import './assets/css/App.min.css';
 
 import { BrowserRouter as Router, Routes, Route  } from "react-router-dom";

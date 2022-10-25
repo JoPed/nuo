@@ -1,14 +1,16 @@
-html{
+html {
   box-sizing: border-box;
 }
 
-*, *::after, *:before{
+*,
+*::after,
+*:before {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
 }
 
-img{
+img {
   display: block;
   width: 100%;
   height: auto;
@@ -16,38 +18,91 @@ img{
 
 
 //* Home
-.home{
-  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(177,210,231,1) 100%); 
+.home {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(177, 210, 231, 1) 100%);
   height: 100vh;
 }
 
-#homeNavigation{
-  width: 800px;
+#homeNavigation {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  column-gap: 100px;
 
-  ul{
-    display: flex;
-    justify-content: space-between;
+  ul {
     list-style-type: none;
-    width: 100%;
+
+    li, a {
+      display: inline-block;
+      height: fit-content;
+    }
+
+    a{
+      text-decoration: none;
+    }
+
+      img {
+        max-width: 220px;
+      }
+
   }
-  
+
 }
 
 #nuoLogo {
   width: 150px;
-  margin-left: 5px;
 }
 
-#moreToCome{
-  background-color: black;
+
+
+#moreToCome {
+  background-color: rgba(0, 0, 0, 1);
   color: #ffffff;
   display: block;
-  margin-left: auto;
-  margin-right: 5px;
+  border: 0px;
+  outline: none;
+  padding-inline: 10px;
+  padding-block: 2px;
 }
+
+
+
+
+//*Media query
+
+@media only screen and (max-width: 1199px) {
+
+  #nuoLogo {
+    margin-left: 120px;
+  }
+
+}
+
+@media only screen and (max-width: 991px) {
+
+  #nuoLogo {
+    margin-left: calc(1.6em + 10.4vw);
+
+  }
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+  #nuoLogo {
+    margin-left: 166px;
+  }
+
+}
+
+@media only screen and (min-width: 1400px) {
+
+  #nuoLogo {
+    margin-left: 210px;
+  }
+
+}
+
+
+
+
 
