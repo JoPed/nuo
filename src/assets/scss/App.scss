@@ -21,12 +21,41 @@ img {
 
 /* #region  Text */
 h2 {
-  color: $col_heading;
+  color: $col_Heading;
 }
 
 #secondHeadingWhatWeDo {
-  color: $col_secondHeadingWhatWeDo;
+  color: $col_SecondHeadingWhatWeDo;
 }
+
+#secondHeadingMaintainable {
+  color: $col_SecondHeadingMaintainable;
+}
+
+#secondHeadingGetInTouch {
+  color: $col_SecondHeadingGetInTouch;
+}
+
+.mainText {
+  white-space: pre-line;
+  color: $col_MainText;
+  font-size: clamp(12px, calc(.6rem + .8vw), 1rem);
+}
+
+.title, .titleGetInTouch {
+  margin-left: auto;
+  background-color: $col_TextBg;
+  color: $col_MainText;
+  display: block;
+  border: 0px;
+  outline: none;
+  padding-inline: 5px;
+  padding-block: 5px;
+  font-weight: bold;
+  width: 115px;
+  text-align: center;
+}
+
 
 
 /* #endregion */
@@ -35,7 +64,7 @@ h2 {
 //* Home
 /* #region  Home */
 .home {
-  background: $col_bg_home;
+  background: $col_Bg_Home;
   height: 100vh;
 }
 
@@ -66,8 +95,8 @@ h2 {
 }
 
 #moreToCome {
-  background-color: $col_textBg;
-  color: $col_mainText;
+  background-color: $col_TextBg;
+  color: $col_MainText;
   display: block;
   border: 0px;
   outline: none;
@@ -78,40 +107,57 @@ h2 {
 
 /* #endregion */
 
-//*WhatWeDo
-/* #region WhatWeDo  */
-#whatwedoContainer {
-  background-color: $col_bg_whatwedo;
-  height: 100vh;
-}
-
+//*Styles for all subpages
+/* #region Styles for all subpages  */
 .pageImageCol {
   margin-left: 90px;
 }
 
-#whatwedoArticle {
-  white-space: pre-line;
-  color: $col_mainText;
-  font-size: clamp(15px, calc(.6rem + .8vw), 1.25rem);
+.pageImages {
+  max-width: 220px;
 }
 
-#whatwedoTitle {
-  margin-left: auto;
-  margin-top: calc(1em + 12vw);
+/* #endregion */
 
-  background-color: $col_textBg;
-  color: $col_mainText;
-  display: block;
-  border: 0px;
-  outline: none;
-  padding-inline: 5px;
-  padding-block: 5px;
+//*WhatWeDo
+/* #region WhatWeDo  */
+#whatwedoContainer {
+  background-color: $col_Bg_WhatWeDo;
+  height: 100vh;
+}
+
+/* #endregion */
+
+//*Maintainable
+#maintainableContainer {
+  background-color: $col_Bg_Maintainable;
+  height: 100vh;
+}
+
+//*GetInTouch
+/* #region GetInTouch  */
+#getInTouchContainer {
+  background-color: $col_Bg_GetInTouch;
+  height: 100vh;
+}
+
+.employeePortrait {
+  max-width: 130px;
+  position: relative;
+
+  cursor: pointer;
+}
+
+.employeeCaption{
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 95%;
+  font-size: .8rem;
   font-weight: bold;
-  width: 115px;
+  text-align: center;
 }
-
-
-
 
 /* #endregion */
 
@@ -126,11 +172,13 @@ h2 {
 
   /* #endregion */
 
-  #whatwedoTitle {
-    margin-top: 25px;
+  .title {
+    margin-top: calc(.5em + 1.5vw);
   }
 
-  /* #endregion */
+  .titleGetInTouch{
+    margin-top: 25px;
+  }
 
 
 }
@@ -142,10 +190,15 @@ h2 {
     margin-left: calc(.8em + 12vw);
 
   }
-
   /* #endregion */
 
+  .titleGetInTouch{
+    margin-right: auto;
+  }
 
+  .title{
+    margin-right: auto;
+  }
 
 }
 
@@ -181,12 +234,14 @@ h2 {
 
   /* #endregion */
 
-  /* #region  What We Do */
-  #whatwedoTitle {
-    margin-top: 150px;
+
+  .title {
+    margin-top: 60px;
   }
 
-  /* #endregion */
+  .titleGetInTouch{
+    margin-top: 50px;
+  }
 
 }
 
@@ -199,11 +254,13 @@ h2 {
 
   /* #endregion */
 
-  /* #region  What We Do */
-  #whatwedoTitle {
-    margin-top: 298px;
+
+  .title {
+    margin-top: 110px;
   }
 
-  /* #endregion */
+  .titleGetInTouch{
+    margin-top: 70px;
+  }
 
 }

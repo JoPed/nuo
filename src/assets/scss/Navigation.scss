@@ -34,31 +34,31 @@
 }
 
 .navlink--whatwedo {
-    background-color: $col_Navlink_whatwedo;
+    background-color: $col_Navlink_WhatWeDo;
     position: relative;
 
     &.active::before {
-        @include navLinkActiveStyle($col_Navlink_whatwedo);
+        @include navLinkActiveStyle($col_Navlink_WhatWeDo);
 
     }
 }
 
 .navlink--maintainable {
-    background-color: $col_Navlink_maintainable;
+    background-color: $col_Navlink_Mintainable;
     position: relative;
 
     &.active::before {
-        @include navLinkActiveStyle($col_Navlink_maintainable);
+        @include navLinkActiveStyle($col_Navlink_Maintainable);
 
     }
 }
 
 .navlink--getintouch {
-    background-color: $col_Navlink_getintouch;
+    background-color: $col_Navlink_GetInTouch;
     position: relative;
 
     &.active::before {
-        @include navLinkActiveStyle($col_Navlink_getintouch);
+        @include navLinkActiveStyle($col_Navlink_GetInTouch);
 
     }
 }

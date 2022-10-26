@@ -1,17 +1,21 @@
 //* Farver
 
 //text & headings
-$col_heading: #000000;
-$col_mainText: #ffffff;
-$col_textBg: #000000;
+$col_Heading: #000000;
+$col_MainText: #ffffff;
+$col_TextBg: #000000;
 
-$col_secondHeadingWhatWeDo: #184059;
+$col_SecondHeadingWhatWeDo: #184059;
+$col_SecondHeadingMaintainable: #5d8aa6;
+$col_SecondHeadingGetInTouch: #bf7b3f;
 
 //navlinks
-$col_Navlink_whatwedo: #184059;
+$col_Navlink_WhatWeDo: #184059;
 $col_Navlink_maintainable: #5d8aa6;
-$col_Navlink_getintouch: #bf7b3f;
+$col_Navlink_GetInTouch: #bf7b3f;
 
 //backgrounds
-$col_bg_home: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(177, 210, 231, 1) 100%);
-$col_bg_whatwedo: #abcfe6;
+$col_Bg_Home: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(177, 210, 231, 1) 100%);
+$col_Bg_WhatWeDo: #abcfe6;
+$col_Bg_Maintainable: #bfddef;
+$col_Bg_GetInTouch: #ffb472;

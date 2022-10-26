@@ -25,8 +25,8 @@ function App() {
         <Routes>  
           <Route path="/" element={<Home />} />
           <Route path="/whatwedo" element={ data && <WhatWeDo data={data.content[0]}/>} />
-          <Route path="/maintainable" element={<Maintainable />} />
-          <Route path="/getintouch" element={<GetInTouch />} />
+          <Route path="/maintainable" element={data && <Maintainable data={data.content[1]}/>} />
+          <Route path="/getintouch" element={data && <GetInTouch data={data.content[2]}/>} />
 
             
         </Routes>

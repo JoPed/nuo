@@ -1,5 +1,7 @@
+//Components
 import Navigation from "../components/Navigation";
 
+//React-Bootstrap
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -15,21 +17,18 @@ const WhatWeDo = ({ data }) => {
                 <Row>
                     <Col md={3} className="pageImageCol">
                         <figure className="pageImages">
-                            <img className="" src="/assets/images/desktop/front-whatwedo.png" />
+                            <img src="/assets/images/desktop/front-whatwedo.png" alt="What we do vertical banner"/>
                         </figure>
                     </Col>
 
-                    <Col md={7}>
+                    <Col md={7} className="px-0">
 
                         <article>
                             {<h2>{data.headings[0]} <span id="secondHeadingWhatWeDo">{data.headings[1]}</span> ...</h2>}
 
-                            <p id="whatwedoArticle">{data.paragraphs.map((item) => (
-                                item
-                            ))}
-                            </p>
+                            <p className="mainText">{data.paragraphs.map(item =>  item)}</p>
 
-                                <span id="whatwedoTitle">What We Do</span>
+                                <span className="title">{data.title}</span>
                         </article>
 
                     </Col>

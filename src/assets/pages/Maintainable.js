@@ -1,12 +1,42 @@
+//Components
 import Navigation from "../components/Navigation";
 
-const Maintainable = ()=>{
+//React-Bootstrap
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+
+const Maintainable = ({data}) => {
 
     return (
-        <>
-        <Navigation />
-        <h1>Maintainable</h1>
-        </>
+        <Container fluid id="maintainableContainer">
+
+            <Container fluid="lg">
+                <Navigation />
+
+                <Row>
+                    <Col md={3} className="pageImageCol">
+                        <figure className="pageImages">
+                            <img src="/assets/images/desktop/front-maintainable.png" alt="Maintainable vertical banner" />
+                        </figure>
+                    
+                    </Col>
+
+                    <Col md={7} className="px-0">
+
+                        <article>
+                            {<h2>{data.headings[0]} <span id="secondHeadingMaintainable">{data.headings[1]}</span> ...</h2>}
+
+                            <p className="mainText">{data.paragraphs.map(item => item)}</p>
+
+                            <span className="title">{data.title}</span>
+                        </article>                  
+                    
+                    </Col>
+                </Row>
+            </Container>
+
+        </Container>
 
     );
 

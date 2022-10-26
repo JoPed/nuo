@@ -28,6 +28,34 @@ h2 {
   color: #184059;
 }
 
+#secondHeadingMaintainable {
+  color: #5d8aa6;
+}
+
+#secondHeadingGetInTouch {
+  color: #bf7b3f;
+}
+
+.mainText {
+  white-space: pre-line;
+  color: #ffffff;
+  font-size: clamp(12px, 0.6rem + 0.8vw, 1rem);
+}
+
+.title, .titleGetInTouch {
+  margin-left: auto;
+  background-color: #000000;
+  color: #ffffff;
+  display: block;
+  border: 0px;
+  outline: none;
+  padding-inline: 5px;
+  padding-block: 5px;
+  font-weight: bold;
+  width: 115px;
+  text-align: center;
+}
+
 /* #endregion */
 /* #region  Home */
 .home {
@@ -76,34 +104,50 @@ h2 {
 }
 
 /* #endregion */
+/* #region Styles for all subpages  */
+.pageImageCol {
+  margin-left: 90px;
+}
+
+.pageImages {
+  max-width: 220px;
+}
+
+/* #endregion */
 /* #region WhatWeDo  */
 #whatwedoContainer {
   background-color: #abcfe6;
   height: 100vh;
 }
 
-.pageImageCol {
-  margin-left: 90px;
+/* #endregion */
+#maintainableContainer {
+  background-color: #bfddef;
+  height: 100vh;
 }
 
-#whatwedoArticle {
-  white-space: pre-line;
-  color: #ffffff;
-  font-size: clamp(15px, 0.6rem + 0.8vw, 1.25rem);
+/* #region GetInTouch  */
+#getInTouchContainer {
+  background-color: #ffb472;
+  height: 100vh;
 }
 
-#whatwedoTitle {
-  margin-left: auto;
-  margin-top: calc(1em + 12vw);
-  background-color: #000000;
-  color: #ffffff;
-  display: block;
-  border: 0px;
-  outline: none;
-  padding-inline: 5px;
-  padding-block: 5px;
+.employeePortrait {
+  max-width: 130px;
+  position: relative;
+  cursor: pointer;
+}
+
+.employeeCaption {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  width: 95%;
+  font-size: 0.8rem;
   font-weight: bold;
-  width: 115px;
+  text-align: center;
 }
 
 /* #endregion */
@@ -113,10 +157,12 @@ h2 {
     margin-left: 120px;
   }
   /* #endregion */
-  #whatwedoTitle {
+  .title {
+    margin-top: calc(0.5em + 1.5vw);
+  }
+  .titleGetInTouch {
     margin-top: 25px;
   }
-  /* #endregion */
 }
 @media only screen and (max-width: 991px) {
   /* #region  Home */
@@ -124,6 +170,12 @@ h2 {
     margin-left: calc(0.8em + 12vw);
   }
   /* #endregion */
+  .titleGetInTouch {
+    margin-right: auto;
+  }
+  .title {
+    margin-right: auto;
+  }
 }
 @media only screen and (max-width: 767px) {
   /* #region  Home */
@@ -146,11 +198,12 @@ h2 {
     margin-left: 166px;
   }
   /* #endregion */
-  /* #region  What We Do */
-  #whatwedoTitle {
-    margin-top: 150px;
+  .title {
+    margin-top: 60px;
   }
-  /* #endregion */
+  .titleGetInTouch {
+    margin-top: 50px;
+  }
 }
 @media only screen and (min-width: 1400px) {
   /* #region  Home */
@@ -158,9 +211,10 @@ h2 {
     margin-left: 210px;
   }
   /* #endregion */
-  /* #region  What We Do */
-  #whatwedoTitle {
-    margin-top: 298px;
+  .title {
+    margin-top: 110px;
   }
-  /* #endregion */
+  .titleGetInTouch {
+    margin-top: 70px;
+  }
 }/*# sourceMappingURL=App.css.map */
