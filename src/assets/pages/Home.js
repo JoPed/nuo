@@ -17,21 +17,44 @@ const Home = () => {
 
                     <ul>
 
-                        <Row className="justify-content-center">
-                            <Col md={{ span: 3 }}
+                        <Row className="justify-content-center gy-4">
+                            <Col xs={12} md={{ span: 3 }}
                                 className="px-0 d-flex justify-content-center">
-                                <li><Link to="/whatwedo" ><img src="/assets/images/desktop/front-whatwedo-link.png" className="mx-auto" /></Link></li>
+                                <li>
+                                    <Link to="/whatwedo" >
+                                        <figure className="homePage_ImageContainer">
+                                            <img className="mx-auto" src="/assets/images/desktop/front-whatwedo-link.png"
+                                                srcSet="/assets/images/mobile/mobil-whatwedo.png 767w,
+                                        /assets/images/desktop/front-whatwedo-link.png 768w"
+                                                sizes="(max-width: 767px) 100vw, (min-width: 768px) 768px" />
+                                        </figure>
+
+                                    </Link>
+                                </li>
                             </Col>
 
-                            <Col md={3} className="px-0 d-flex justify-content-center">
-                                <li><Link to="/maintainable"><img src="/assets/images/desktop/front-maintainable-link.png" className="mx-auto" /></Link></li>
+                            <Col xs={12} md={3} className="px-0 d-flex justify-content-center">
+                                <li>
+                                    <Link to="/maintainable">
+                                        <figure className="homePage_ImageContainer">
+                                            <img className="mx-auto" src="/assets/images/desktop/front-maintainable-link.png"
+                                                srcSet="/assets/images/mobile/mobil-maintainable.png 767w,
+                                        /assets/images/desktop/front-maintainable-link.png 768w"
+                                                sizes="(max-width: 767px) 100%, (min-width: 768px) 768px" />
+                                        </figure>
+
+                                    </Link>
+                                </li>
                             </Col>
 
-                            <Col md={3} className="px-0 d-flex justify-content-center">
+                            <Col xs={12} md={3} className="px-0 d-flex justify-content-center">
                                 <li >
                                     <Link to="/getintouch">
-                                        <figure id="moreToComeContainer">
-                                            <img src="/assets/images/desktop/front-getintouch-link.png" className="mx-auto" />
+                                        <figure className="homePage_ImageContainer">
+                                            <img className="mx-auto" src="/assets/images/desktop/front-getintouch-link.png"
+                                                srcSet="/assets/images/mobile/mobil-getintouch.png 767w,
+                                            /assets/images/desktop/front-getintouch-link.png 768w"
+                                                sizes="(max-width: 767px) 100%, (min-width: 768px) 768px" />
                                             <p id="moreToCome">And yet... more to come</p>
                                         </figure>
                                     </Link>

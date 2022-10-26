@@ -1,0 +1,64 @@
+@import "variables", "mixins";
+
+//* Navigation.js
+
+#navbar{
+    margin-bottom: 35px;
+}
+
+
+#navlist {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    img {
+        width: 75px;
+        cursor: pointer;
+    }    
+
+    li:not(:nth-child(4)) {
+        margin-right: 15px;
+    }
+}
+
+//Nav link styling
+.navlink {
+    display: inline-block;
+    width: 63px;
+    height: 63px;
+    margin-block: 15px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.navlink--whatwedo {
+    background-color: $col_Navlink_whatwedo;
+    position: relative;
+
+    &.active::before {
+        @include navLinkActiveStyle($col_Navlink_whatwedo);
+
+    }
+}
+
+.navlink--maintainable {
+    background-color: $col_Navlink_maintainable;
+    position: relative;
+
+    &.active::before {
+        @include navLinkActiveStyle($col_Navlink_maintainable);
+
+    }
+}
+
+.navlink--getintouch {
+    background-color: $col_Navlink_getintouch;
+    position: relative;
+
+    &.active::before {
+        @include navLinkActiveStyle($col_Navlink_getintouch);
+
+    }
+}

@@ -1,0 +1,12 @@
+@mixin navLinkActiveStyle($color) {
+
+    position: absolute;
+                bottom: -12px;
+                background-color: $color;
+                display: block;
+                height: 8px;
+                border-radius: 5px;
+                width: 100%;
+                content: "";
+    
+}

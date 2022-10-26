@@ -1,14 +1,25 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import "../css/Navigation.min.css";
+import { useNavigate } from "react-router-dom";
+
+import Container from "react-bootstrap/Container";
 
 const Navigation = () => {
 
+    const navigate = useNavigate();
+
+    const backToHome = ()=>{
+        navigate("/");
+    }
+
     return (
 
-        <nav>
-            <ul>
-                <li><Link to="/whatwedo">WhatWeDo</Link></li>
-                <li><Link to="/maintainable">Maintainable</Link></li>
-                <li><Link to="/getintouch">GetInTouch</Link></li>
+        <nav id="navbar" className="">
+            <ul id="navlist">
+                <li><img src="/assets/images/back.png" alt="Back to home" onClick={backToHome}/></li>
+                <li><NavLink to="/whatwedo" className="navlink navlink--whatwedo"></NavLink></li>
+                <li><NavLink to="/maintainable" className="navlink navlink--maintainable"></NavLink></li>
+                <li><NavLink to="/getintouch" className="navlink navlink--getintouch"></NavLink></li>
             </ul>
         </nav>
     );

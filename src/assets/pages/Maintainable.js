@@ -1,7 +1,12 @@
+import Navigation from "../components/Navigation";
+
 const Maintainable = ()=>{
 
     return (
-        <><h1>Maintainable</h1></>
+        <>
+        <Navigation />
+        <h1>Maintainable</h1>
+        </>
 
     );
 

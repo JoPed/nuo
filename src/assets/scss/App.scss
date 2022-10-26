@@ -1,5 +1,8 @@
+@import "variables";
+
 html {
   box-sizing: border-box;
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
 }
 
 *,
@@ -16,10 +19,23 @@ img {
   height: auto;
 }
 
+/* #region  Text */
+h2 {
+  color: $col_heading;
+}
+
+#secondHeadingWhatWeDo {
+  color: $col_secondHeadingWhatWeDo;
+}
+
+
+/* #endregion */
+
 
 //* Home
+/* #region  Home */
 .home {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(177, 210, 231, 1) 100%);
+  background: $col_bg_home;
   height: 100vh;
 }
 
@@ -31,18 +47,15 @@ img {
   ul {
     list-style-type: none;
 
-    li, a {
+    li,
+    a {
       display: inline-block;
       height: fit-content;
     }
 
-    a{
+    a {
       text-decoration: none;
     }
-
-      img {
-        max-width: 220px;
-      }
 
   }
 
@@ -52,57 +65,145 @@ img {
   width: 150px;
 }
 
-
-
 #moreToCome {
-  background-color: rgba(0, 0, 0, 1);
-  color: #ffffff;
+  background-color: $col_textBg;
+  color: $col_mainText;
   display: block;
   border: 0px;
   outline: none;
   padding-inline: 10px;
   padding-block: 2px;
+  font-weight: bold;
+}
+
+/* #endregion */
+
+//*WhatWeDo
+/* #region WhatWeDo  */
+#whatwedoContainer {
+  background-color: $col_bg_whatwedo;
+  height: 100vh;
+}
+
+.pageImageCol {
+  margin-left: 90px;
+}
+
+#whatwedoArticle {
+  white-space: pre-line;
+  color: $col_mainText;
+  font-size: clamp(15px, calc(.6rem + .8vw), 1.25rem);
+}
+
+#whatwedoTitle {
+  margin-left: auto;
+  margin-top: calc(1em + 12vw);
+
+  background-color: $col_textBg;
+  color: $col_mainText;
+  display: block;
+  border: 0px;
+  outline: none;
+  padding-inline: 5px;
+  padding-block: 5px;
+  font-weight: bold;
+  width: 115px;
 }
 
 
 
+
+/* #endregion */
 
 //*Media query
 
 @media only screen and (max-width: 1199px) {
 
+  /* #region  Home */
   #nuoLogo {
     margin-left: 120px;
   }
+
+  /* #endregion */
+
+  #whatwedoTitle {
+    margin-top: 25px;
+  }
+
+  /* #endregion */
+
 
 }
 
 @media only screen and (max-width: 991px) {
 
+  /* #region  Home */
   #nuoLogo {
-    margin-left: calc(1.6em + 10.4vw);
+    margin-left: calc(.8em + 12vw);
 
   }
+
+  /* #endregion */
+
+
 
 }
 
+@media only screen and (max-width: 767px) {
+
+  /* #region  Home */
+  #nuoLogo {
+    margin-left: calc(.6vw + .1em)
+  }
+
+  #moreToCome {
+    margin-top: 10px;
+    width: 49%;
+    margin-left: auto;
+  }
+
+  .homePage_ImageContainer {
+    max-width: 95vw;
+  }
+
+  /* #endregion */
+
+}
+
+
+
 @media only screen and (min-width: 1200px) {
 
+  /* #region  Home */
   #nuoLogo {
     margin-left: 166px;
   }
+
+  /* #endregion */
+
+  /* #region  What We Do */
+  #whatwedoTitle {
+    margin-top: 150px;
+  }
+
+  /* #endregion */
 
 }
 
 @media only screen and (min-width: 1400px) {
 
+  /* #region  Home */
   #nuoLogo {
     margin-left: 210px;
   }
 
+  /* #endregion */
+
+  /* #region  What We Do */
+  #whatwedoTitle {
+    margin-top: 298px;
+  }
+
+  /* #endregion */
+
 }
-
-
-
-
-
