@@ -11,13 +11,15 @@ import FormText from "react-bootstrap/FormText";
 
 import { schema } from "../content/Schema";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useState } from "react";
+import { useEffect } from "react";
 
 
 
 
 const Modal = ({ isOpen, closeModal, employeeNames }) => {
 
-    const { register, handleSubmit, formState: { errors, isSubmitted }, reset } = useForm({
+    const { register, handleSubmit,formState, formState: { errors, isSubmitSuccessful }, reset } = useForm({
         resolver: yupResolver(schema),
         defaultValues: {
             name: "",
@@ -27,19 +29,26 @@ const Modal = ({ isOpen, closeModal, employeeNames }) => {
         }
     });
 
-    const onSubmit = (data) => {
+    //*Creating a useState with default value of empty object
+    const [submittetData, setSubmittedData] = useState({});
 
-        if (isSubmitted) {
-            reset();
-            console.log(data);
-            console.log("first check", isSubmitted);
-        }
-        console.log("second check", isSubmitted);
+    //Setting the useState to the data object containing the values from the form
+    const onSubmit = (formData) => {
+
+        setSubmittedData(formData);
     }
+    
+    //Used to make sure isSubmitSuccessful is set to true, before cheking the value.
+    useEffect(() => {
+
+        //Only when the submit is successful, should the form reset
+        if (isSubmitSuccessful) {
+            reset({name: "", email: "", subject: "", textArea: ""});
+        }
+
+    }, [formState, submittetData, reset]);
 
     if (!isOpen) return false;
-
-
 
     return ReactDOM.createPortal(
         <div id="modal">
