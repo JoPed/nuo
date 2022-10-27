@@ -14,7 +14,7 @@
     align-items: center;
 
     img {
-        width: 75px;
+        width: 70px;
         cursor: pointer;
     }    
 
@@ -26,8 +26,8 @@
 //Nav link styling
 .navlink {
     display: inline-block;
-    width: 63px;
-    height: 63px;
+    width: 60px;
+    height: 60px;
     margin-block: 15px;
     border-radius: 8px;
     text-decoration: none;
@@ -44,7 +44,7 @@
 }
 
 .navlink--maintainable {
-    background-color: $col_Navlink_Mintainable;
+    background-color: $col_Navlink_Maintainable;
     position: relative;
 
     &.active::before {

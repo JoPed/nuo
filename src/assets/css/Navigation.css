@@ -16,7 +16,7 @@
           align-items: center;
 }
 #navlist img {
-  width: 75px;
+  width: 70px;
   cursor: pointer;
 }
 #navlist li:not(:nth-child(4)) {
@@ -25,8 +25,8 @@
 
 .navlink {
   display: inline-block;
-  width: 63px;
-  height: 63px;
+  width: 60px;
+  height: 60px;
   margin-block: 15px;
   border-radius: 8px;
   text-decoration: none;

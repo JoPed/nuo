@@ -42,7 +42,8 @@ h2 {
   font-size: clamp(12px, 0.6rem + 0.8vw, 1rem);
 }
 
-.title, .titleGetInTouch {
+.title,
+.titleGetInTouch {
   margin-left: auto;
   background-color: #000000;
   color: #ffffff;
@@ -106,7 +107,7 @@ h2 {
 /* #endregion */
 /* #region Styles for all subpages  */
 .pageImageCol {
-  margin-left: 90px;
+  margin-left: 80px;
 }
 
 .pageImages {
@@ -132,6 +133,10 @@ h2 {
   height: 100vh;
 }
 
+#getInTouchArticle {
+  position: relative;
+}
+
 .employeePortrait {
   max-width: 130px;
   position: relative;
@@ -151,6 +156,89 @@ h2 {
 }
 
 /* #endregion */
+/* #region  Modal */
+#modal {
+  position: absolute;
+  min-width: 430px;
+  background-color: #184059;
+  left: 50%;
+  top: 5%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  z-index: 99;
+}
+#modal #close {
+  position: relative;
+  width: 100%;
+}
+#modal #close img {
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: calc(0.3em + 0.3vw);
+  margin-left: auto;
+  cursor: pointer;
+}
+#modal h2 {
+  color: #ffffff;
+  padding: 10px;
+}
+
+.labels {
+  color: #ffffff;
+}
+
+.formInput, #formTextArea {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #ffffff;
+  background-color: transparent;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 0.5rem;
+}
+.formInput:focus, #formTextArea:focus {
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 0.3rem rgba(191, 123, 63, 0.5);
+          box-shadow: 0 0 0 0.3rem rgba(191, 123, 63, 0.5);
+  border-color: #ffb472;
+}
+
+#formTextArea {
+  min-width: 100%;
+  max-width: 100%;
+}
+
+#btnSubmit {
+  padding: 0.375rem 1rem;
+  background-color: transparent;
+  border: 2px solid #ced4da;
+  border-radius: 0.5rem;
+  width: 33%;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 1rem;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+  cursor: pointer;
+}
+#btnSubmit:hover, #btnSubmit:active {
+  border-color: #bf7b3f;
+}
+
+.errorText {
+  color: #ccc;
+}
+
+/* #endregion */
+/* #region  Media queries */
 @media only screen and (max-width: 1199px) {
   /* #region  Home */
   #nuoLogo {
@@ -158,7 +246,7 @@ h2 {
   }
   /* #endregion */
   .title {
-    margin-top: calc(0.5em + 1.5vw);
+    margin-top: calc(0.6em + 11.5vw);
   }
   .titleGetInTouch {
     margin-top: 25px;
@@ -199,7 +287,7 @@ h2 {
   }
   /* #endregion */
   .title {
-    margin-top: 60px;
+    margin-top: 189px;
   }
   .titleGetInTouch {
     margin-top: 50px;
@@ -212,9 +300,10 @@ h2 {
   }
   /* #endregion */
   .title {
-    margin-top: 110px;
+    margin-top: 228px;
   }
   .titleGetInTouch {
-    margin-top: 70px;
+    margin-top: 74px;
   }
-}/*# sourceMappingURL=App.css.map */
+}
+/* #endregion *//*# sourceMappingURL=App.css.map */
