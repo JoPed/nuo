@@ -114,11 +114,21 @@ h2 {
   max-width: 220px;
 }
 
+.nuoLogo {
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  width: 150px;
+}
+
 /* #endregion */
 /* #region WhatWeDo  */
 #whatwedoContainer {
   background-color: #abcfe6;
   height: 100vh;
+}
+#whatwedoContainer > div {
+  position: relative;
 }
 
 /* #endregion */
@@ -131,6 +141,9 @@ h2 {
 #getInTouchContainer {
   background-color: #ffb472;
   height: 100vh;
+}
+#getInTouchContainer > div {
+  position: relative;
 }
 
 #getInTouchArticle {
@@ -189,7 +202,8 @@ h2 {
   color: #ffffff;
 }
 
-.formInput, #formTextArea {
+.formInput,
+#formTextArea {
   display: block;
   width: 100%;
   padding: 0.375rem 0.75rem;
@@ -204,7 +218,8 @@ h2 {
           appearance: none;
   border-radius: 0.5rem;
 }
-.formInput:focus, #formTextArea:focus {
+.formInput:focus,
+#formTextArea:focus {
   outline: 0;
   -webkit-box-shadow: 0 0 0 0.3rem rgba(191, 123, 63, 0.5);
           box-shadow: 0 0 0 0.3rem rgba(191, 123, 63, 0.5);
@@ -258,12 +273,6 @@ h2 {
     margin-left: calc(0.8em + 12vw);
   }
   /* #endregion */
-  .titleGetInTouch {
-    margin-right: auto;
-  }
-  .title {
-    margin-right: auto;
-  }
 }
 @media only screen and (max-width: 767px) {
   /* #region  Home */
@@ -279,6 +288,12 @@ h2 {
     max-width: 95vw;
   }
   /* #endregion */
+  .pageImageCol {
+    margin-left: 0;
+  }
+  .pageImages {
+    max-width: unset;
+  }
 }
 @media only screen and (min-width: 1200px) {
   /* #region  Home */

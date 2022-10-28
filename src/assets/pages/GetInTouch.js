@@ -17,13 +17,13 @@ const GetInTouch = ({ data }) => {
     const [open, setOpen] = useState(false);
     const [index, setIndex] = useState(0);
 
-    const openModal = e =>{
+    const openModal = e => {
         setOpen(true);
         setIndex(e.currentTarget.dataset.index);
 
     }
 
-    const closeModal = ()=> setOpen(false);
+    const closeModal = () => setOpen(false);
 
 
     return (
@@ -33,7 +33,9 @@ const GetInTouch = ({ data }) => {
 
                 <Row>
                     <Col md={3} className="pageImageCol">
-                        <figure className="pageImages"><img src="/assets/images/desktop/front-getintouch.png" alt="Get In Touch vertical banner" /></figure>
+                        <figure>
+                            <img src="/assets/images/desktop/front-getintouch.png" alt="Get In Touch vertical banner" />
+                        </figure>
                     </Col>
 
                     <Col md={7} className="px-0">
@@ -51,27 +53,29 @@ const GetInTouch = ({ data }) => {
                                 </Col>
                                 <Col md={2} className="px-0 me-2">
                                     <figure className="employeePortrait">
-                                        <img src="/assets/images/desktop/maintainable-small.png" alt="Get in touch with Employee 2" data-index={1} onClick={openModal}/>
-                                    <figcaption className="employeeCaption">pr@coolish.com</figcaption>
+                                        <img src="/assets/images/desktop/maintainable-small.png" alt="Get in touch with Employee 2" data-index={1} onClick={openModal} />
+                                        <figcaption className="employeeCaption">pr@coolish.com</figcaption>
                                     </figure>
                                 </Col>
                                 <Col md={2} className="px-0">
                                     <figure className="employeePortrait">
-                                        <img src="/assets/images/desktop/getintouch-small.png" alt="Get in touch with Employee 3" data-index={2} onClick={openModal}/>
+                                        <img src="/assets/images/desktop/getintouch-small.png" alt="Get in touch with Employee 3" data-index={2} onClick={openModal} />
                                         <figcaption className="employeeCaption">mn@coolish.com</figcaption>
                                     </figure>
                                 </Col>
                             </Row>
 
-                            <span className="titleGetInTouch">{data.title}</span>
+                            <span className="titleGetInTouch d-none d-lg-block">{data.title}</span>
 
                         </article>
                     </Col>
 
                 </Row>
+
+                {/* <figure className="nuoLogo"><img src="/assets/images/mobile/logo-a.png" alt="Nuo logo" /></figure> */}
             </Container>
 
-            <Modal isOpen={open} closeModal={closeModal} employeeNames={data.employeeNames[index]}/>
+            <Modal isOpen={open} closeModal={closeModal} employeeNames={data.employeeNames[index]} />
 
         </Container>
     )

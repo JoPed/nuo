@@ -2,8 +2,6 @@ import { NavLink } from "react-router-dom";
 import "../css/Navigation.min.css";
 import { useNavigate } from "react-router-dom";
 
-import Container from "react-bootstrap/Container";
-
 const Navigation = () => {
 
     const navigate = useNavigate();
@@ -17,9 +15,9 @@ const Navigation = () => {
         <nav id="navbar">
             <ul id="navlist">
                 <li><img src="/assets/images/back.svg" alt="Back to home" onClick={backToHome}/></li>
-                <li><NavLink to="/whatwedo" className="navlink navlink--whatwedo"></NavLink></li>
-                <li><NavLink to="/maintainable" className="navlink navlink--maintainable"></NavLink></li>
-                <li><NavLink to="/getintouch" className="navlink navlink--getintouch"></NavLink></li>
+                <li className="ms-auto ms-md-0"><NavLink to="/whatwedo" className="navlink navlink--WhatWeDo"></NavLink></li>
+                <li><NavLink to="/maintainable" className="navlink navlink--Maintainable"></NavLink></li>
+                <li><NavLink to="/getintouch" className="navlink navlink--GetInTouch"></NavLink></li>
             </ul>
         </nav>
     );

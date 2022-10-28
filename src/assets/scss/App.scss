@@ -114,8 +114,16 @@ h2 {
   margin-left: 80px;
 }
 
-.pageImages {
-  max-width: 220px;
+.pageImages{
+   max-width: 220px;
+}
+
+.nuoLogo{
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  width: 150px;
+
 }
 
 /* #endregion */
@@ -125,6 +133,10 @@ h2 {
 #whatwedoContainer {
   background-color: $col_Bg_WhatWeDo;
   height: 100vh;
+
+  & > div{
+    position: relative;
+  }
 }
 
 /* #endregion */
@@ -140,9 +152,13 @@ h2 {
 #getInTouchContainer {
   background-color: $col_Bg_GetInTouch;
   height: 100vh;
+
+  & > div{
+    position: relative;
+  }
 }
 
-#getInTouchArticle{
+#getInTouchArticle {
   position: relative;
 }
 
@@ -193,18 +209,19 @@ h2 {
     }
   }
 
-  h2{
+  h2 {
     color: $col_MainText;
     padding: 10px;
   }
 
 }
 
-.labels{
+.labels {
   color: $col_MainText;
 }
 
-.formInput, #formTextArea{
+.formInput,
+#formTextArea {
   display: block;
   width: 100%;
   padding: .375rem .75rem;
@@ -217,7 +234,7 @@ h2 {
   appearance: none;
   border-radius: .5rem;
 
-  &:focus{
+  &:focus {
     outline: 0;
     box-shadow: 0 0 0 .3rem rgba($col_Navlink_GetInTouch, .5);
 
@@ -226,12 +243,12 @@ h2 {
 
 }
 
-#formTextArea{
+#formTextArea {
   min-width: 100%;
   max-width: 100%;
 }
 
-#btnSubmit{
+#btnSubmit {
   padding: .375rem 1rem;
   background-color: transparent;
   border: 2px solid #ced4da;
@@ -243,16 +260,15 @@ h2 {
   transition-duration: .4s;
   cursor: pointer;
 
-  &:hover, &:active{
+  &:hover,
+  &:active {
     border-color: $col_Navlink_GetInTouch;
   }
 }
 
-.errorText{
+.errorText {
   color: #ccc;
 }
-
-
 
 /* #endregion */
 
@@ -269,12 +285,14 @@ h2 {
 
   /* #endregion */
 
+  //*Styles for all subpages
   .title {
     // margin-top: calc(.5em + 1.5vw);
     margin-top: calc(.6em + 11.5vw);
 
   }
 
+  //*GetInTouch
   .titleGetInTouch {
     margin-top: 25px;
   }
@@ -287,18 +305,8 @@ h2 {
   /* #region  Home */
   #nuoLogo {
     margin-left: calc(.8em + 12vw);
-
   }
-
   /* #endregion */
-
-  .titleGetInTouch {
-    margin-right: auto;
-  }
-
-  .title {
-    margin-right: auto;
-  }
 
 }
 
@@ -321,6 +329,13 @@ h2 {
 
   /* #endregion */
 
+  .pageImageCol {
+    margin-left: 0;
+  }
+
+  .pageImages{
+    max-width: unset;
+  }
 }
 
 
@@ -333,13 +348,13 @@ h2 {
 
   /* #endregion */
 
-
+  //*Styles for all subpages
   .title {
     // margin-top: 60px;
     margin-top: 189px;
-
   }
 
+  //*GetInTouch
   .titleGetInTouch {
     margin-top: 50px;
   }
@@ -355,13 +370,14 @@ h2 {
 
   /* #endregion */
 
-
+  //*Styles for all subpages
   .title {
     // margin-top: 110px;
     margin-top: 228px;
 
   }
 
+  //*GetInTouch
   .titleGetInTouch {
     margin-top: 74px;
   }

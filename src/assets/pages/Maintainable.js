@@ -16,7 +16,7 @@ const Maintainable = ({data}) => {
 
                 <Row>
                     <Col md={3} className="pageImageCol">
-                        <figure className="pageImages">
+                        <figure>
                             <img src="/assets/images/desktop/front-maintainable.png" alt="Maintainable vertical banner" />
                         </figure>
                     
@@ -29,7 +29,7 @@ const Maintainable = ({data}) => {
 
                             <p className="mainText">{data.paragraphs.map(item => item)}</p>
 
-                            <span className="title">{data.title}</span>
+                            <span className="title d-none d-lg-block">{data.title}</span>
                         </article>                  
                     
                     </Col>

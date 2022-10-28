@@ -6,6 +6,8 @@ import Col from "react-bootstrap/Col";
 
 const Home = () => {
 
+
+
     return (
         <Container fluid className="home px-0">
 
@@ -14,6 +16,8 @@ const Home = () => {
                 <nav className="container-fluid" id="homeNavigation">
 
                     <figure id="nuoLogo"><img src="assets/images/logo-final.png" /></figure>
+
+                    <p>{window.innerWidth}</p>
 
                     <ul>
 
@@ -26,7 +30,7 @@ const Home = () => {
                                             <img className="mx-auto" src="/assets/images/desktop/front-whatwedo-link.png"
                                                 srcSet="/assets/images/mobile/mobil-whatwedo.png 767w,
                                         /assets/images/desktop/front-whatwedo-link.png 768w"
-                                                sizes="(max-width: 767px) 100vw, (min-width: 768px) 768px" />
+                                                sizes="(max-width: 767px) 100%, (min-width: 768px) 768px" />
                                         </figure>
 
                                     </Link>

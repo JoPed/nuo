@@ -1,5 +1,6 @@
 #navbar {
   margin-bottom: 35px;
+  padding-top: 25px;
 }
 
 #navlist {
@@ -32,13 +33,13 @@
   text-decoration: none;
 }
 
-.navlink--whatwedo {
+.navlink--WhatWeDo {
   background-color: #184059;
   position: relative;
 }
-.navlink--whatwedo.active::before {
-  position: absolute;
+.navlink--WhatWeDo.active::before {
   bottom: -12px;
+  position: absolute;
   background-color: #184059;
   display: block;
   height: 8px;
@@ -47,13 +48,13 @@
   content: "";
 }
 
-.navlink--maintainable {
+.navlink--Maintainable {
   background-color: #5d8aa6;
   position: relative;
 }
-.navlink--maintainable.active::before {
-  position: absolute;
+.navlink--Maintainable.active::before {
   bottom: -12px;
+  position: absolute;
   background-color: #5d8aa6;
   display: block;
   height: 8px;
@@ -62,17 +63,50 @@
   content: "";
 }
 
-.navlink--getintouch {
+.navlink--GetInTouch {
   background-color: #bf7b3f;
   position: relative;
 }
-.navlink--getintouch.active::before {
-  position: absolute;
+.navlink--GetInTouch.active::before {
   bottom: -12px;
+  position: absolute;
   background-color: #bf7b3f;
   display: block;
   height: 8px;
   border-radius: 5px;
   width: 100%;
   content: "";
+}
+
+@media only screen and (max-width: 767px) {
+  .navlink--WhatWeDo.active::before {
+    top: -12px;
+    position: absolute;
+    background-color: #184059;
+    display: block;
+    height: 8px;
+    border-radius: 5px;
+    width: 100%;
+    content: "";
+  }
+  .navlink--Maintainable.active::before {
+    top: -12px;
+    position: absolute;
+    background-color: #5d8aa6;
+    display: block;
+    height: 8px;
+    border-radius: 5px;
+    width: 100%;
+    content: "";
+  }
+  .navlink--GetInTouch.active::before {
+    top: -12px;
+    position: absolute;
+    background-color: #bf7b3f;
+    display: block;
+    height: 8px;
+    border-radius: 5px;
+    width: 100%;
+    content: "";
+  }
 }/*# sourceMappingURL=Navigation.css.map */

@@ -15,24 +15,31 @@ const WhatWeDo = ({ data }) => {
                 <Navigation />
 
                 <Row>
-                    <Col md={3} className="pageImageCol">
+                    <Col xs={12} md={3} className="pageImageCol">
                         <figure className="pageImages">
-                            <img src="/assets/images/desktop/front-whatwedo.png" alt="What we do vertical banner"/>
+                            <img src="/assets/images/desktop/front-whatwedo.png" 
+                            alt="What we do vertical banner"
+                            srcSet="/assets/images/mobile/mobil-whatwedo.png 767w,
+                            /assets/images/desktop/front-whatwedo.png 768w"
+                            sizes="(max-width: 767px) 100%, (min-width: 768px) 768px"/>
                         </figure>
                     </Col>
 
-                    <Col md={7} className="px-0">
+                    <Col xs={12} md={7} className="mt-2 mt-md-0">
 
                         <article>
                             {<h2>{data.headings[0]} <span id="secondHeadingWhatWeDo">{data.headings[1]}</span> ...</h2>}
 
                             <p className="mainText">{data.paragraphs.map(item =>  item)}</p>
 
-                                <span className="title">{data.title}</span>
+                                <span className="title d-none d-lg-block">{data.title}</span>
                         </article>
 
                     </Col>
                 </Row>
+
+                <figure className="nuoLogo d-md-none"><img src="/assets/images/mobile/logo-a.png" alt="Nuo logo" /></figure>
+
 
 
             </Container>

@@ -4,6 +4,7 @@
 
 #navbar{
     margin-bottom: 35px;
+    padding-top: 25px;
 }
 
 
@@ -33,32 +34,58 @@
     text-decoration: none;
 }
 
-.navlink--whatwedo {
+.navlink--WhatWeDo {
     background-color: $col_Navlink_WhatWeDo;
     position: relative;
 
     &.active::before {
-        @include navLinkActiveStyle($col_Navlink_WhatWeDo);
+        @include navLinkActiveStyle($col_Navlink_WhatWeDo, false);
 
     }
 }
 
-.navlink--maintainable {
+.navlink--Maintainable {
     background-color: $col_Navlink_Maintainable;
     position: relative;
 
     &.active::before {
-        @include navLinkActiveStyle($col_Navlink_Maintainable);
+        @include navLinkActiveStyle($col_Navlink_Maintainable, false);
 
     }
 }
 
-.navlink--getintouch {
+.navlink--GetInTouch {
     background-color: $col_Navlink_GetInTouch;
     position: relative;
 
     &.active::before {
-        @include navLinkActiveStyle($col_Navlink_GetInTouch);
+        @include navLinkActiveStyle($col_Navlink_GetInTouch, false);
 
     }
+}
+
+
+@media only screen and (max-width: 767px) {
+
+    .navlink--WhatWeDo{
+        &.active::before{
+            @include navLinkActiveStyle($col_Navlink_WhatWeDo, true)
+
+        }
+    }
+
+    .navlink--Maintainable {
+
+        &.active::before {
+            @include navLinkActiveStyle($col_Navlink_Maintainable, true);
+    
+        }
+    }
+
+    .navlink--GetInTouch{
+        &.active::before{
+            @include navLinkActiveStyle($col_Navlink_GetInTouch, true)
+        }
+    }
+    
 }
