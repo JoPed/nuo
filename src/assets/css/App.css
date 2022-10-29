@@ -40,6 +40,8 @@ h2 {
   white-space: pre-line;
   color: #ffffff;
   font-size: clamp(12px, 0.6rem + 0.8vw, 1rem);
+  position: relative;
+  z-index: 10;
 }
 
 .title,
@@ -114,11 +116,12 @@ h2 {
   max-width: 220px;
 }
 
-.nuoLogo {
+.nuoLogoSubPages {
+  width: 125px;
   position: fixed;
   right: 5%;
-  bottom: 5%;
-  width: 150px;
+  bottom: 2%;
+  z-index: 5;
 }
 
 /* #endregion */
@@ -129,12 +132,16 @@ h2 {
 }
 #whatwedoContainer > div {
   position: relative;
+  z-index: 1;
 }
 
 /* #endregion */
 #maintainableContainer {
   background-color: #bfddef;
   height: 100vh;
+}
+#maintainableContainer > div {
+  position: relative;
 }
 
 /* #region GetInTouch  */
@@ -154,6 +161,7 @@ h2 {
   max-width: 130px;
   position: relative;
   cursor: pointer;
+  z-index: 10;
 }
 
 .employeeCaption {
@@ -259,12 +267,27 @@ h2 {
   #nuoLogo {
     margin-left: 120px;
   }
+  .home {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding-block: 25px;
+  }
   /* #endregion */
   .title {
     margin-top: calc(0.6em + 11.5vw);
   }
   .titleGetInTouch {
     margin-top: 25px;
+  }
+  #getInTouchContainer {
+    height: unset;
+  }
+  #maintainableContainer {
+    height: unset;
+  }
+  #whatwedoContainer {
+    height: unset;
   }
 }
 @media only screen and (max-width: 991px) {
@@ -293,6 +316,14 @@ h2 {
   }
   .pageImages {
     max-width: unset;
+  }
+}
+@media only screen and (max-width: 576px) {
+  #modal {
+    min-width: 100%;
+    top: 0;
+    -webkit-transform: translate(-50%, -15%);
+            transform: translate(-50%, -15%);
   }
 }
 @media only screen and (min-width: 1200px) {

@@ -21,3 +21,13 @@ src -> assets -> images -> desktop
 src -> assets -> images -> mobile
 
 
+
+
+<picture>
+                                <source media="(max-width: 767px)" srcSet="/assets/images/mobile/mobil-whatwedo.png" />
+                                <source media="(min-width: 768px)" srcSet="/assets/images/desktop/front-whatwedo.png" />
+                                <img src="/assets/images/desktop/front-whatwedo.png"
+                                    alt="What we do vertical banner" />
+                            </picture>
+
+

@@ -79,6 +79,19 @@
 }
 
 @media only screen and (max-width: 767px) {
+  #navbar {
+    margin-bottom: 0;
+  }
+  #navlist img {
+    width: 40px;
+  }
+  #navlist li:not(:nth-child(4)) {
+    margin-right: 10px;
+  }
+  .navlink {
+    height: 30px;
+    width: 30px;
+  }
   .navlink--WhatWeDo.active::before {
     top: -12px;
     position: absolute;

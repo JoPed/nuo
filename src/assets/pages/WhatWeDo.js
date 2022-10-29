@@ -19,13 +19,13 @@ const WhatWeDo = ({ data }) => {
                         <figure className="pageImages">
                             <img src="/assets/images/desktop/front-whatwedo.png" 
                             alt="What we do vertical banner"
-                            srcSet="/assets/images/mobile/mobil-whatwedo.png 767w,
-                            /assets/images/desktop/front-whatwedo.png 768w"
-                            sizes="(max-width: 767px) 100%, (min-width: 768px) 768px"/>
+                            srcSet="/assets/images/mobile/mobil-whatwedo.png 730w,
+                            /assets/images/desktop/front-whatwedo.png 220w"
+                            sizes="(max-width: 767px) 730px, 220px"/>
                         </figure>
                     </Col>
 
-                    <Col xs={12} md={7} className="mt-2 mt-md-0">
+                    <Col xs={12} md={7} className="mt-2 mt-md-0 pb-5 pb-md-0">
 
                         <article>
                             {<h2>{data.headings[0]} <span id="secondHeadingWhatWeDo">{data.headings[1]}</span> ...</h2>}
@@ -38,7 +38,13 @@ const WhatWeDo = ({ data }) => {
                     </Col>
                 </Row>
 
-                <figure className="nuoLogo d-md-none"><img src="/assets/images/mobile/logo-a.png" alt="Nuo logo" /></figure>
+                <Row className="mt-5 pb-5 d-md-none">
+                    <Col>
+                    <figure className="nuoLogoSubPages  ms-auto"><img src="/assets/images/mobile/logo-a.png" alt="Nuo logo" /></figure>
+                    </Col>
+                </Row>
+
+                
 
 
 
