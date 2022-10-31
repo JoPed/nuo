@@ -123,9 +123,8 @@ h2 {
 .nuoLogoSubPages {
   width: 125px;
 
-  position: fixed;
-  right: 5%;
-  bottom: 2%;
+  position: sticky;
+  margin-left: auto;
   z-index: 5;
 }
 
@@ -293,39 +292,18 @@ h2 {
   #nuoLogo {
     margin-left: 120px;
   }
-
-  .home{
-    height: fit-content;
-    padding-block: 25px;
-  }
-
   /* #endregion */
 
   //*Styles for all subpages
   .title {
-    // margin-top: calc(.5em + 1.5vw);
-    margin-top: calc(.6em + 11.5vw);
-
+    // margin-top: calc(.6em + 11.5vw);
+    margin-top: 148px;
   }
 
   //*GetInTouch
   .titleGetInTouch {
-    margin-top: 25px;
+    margin-top: 164px;
   }
-
-  #getInTouchContainer {
-    height: unset;
-  }
-
-  //*Maintainable
-  #maintainableContainer {
-    height: unset;
-  }
-
-  #whatwedoContainer {
-    height: unset;
-  }
-
 
 }
 
@@ -343,6 +321,11 @@ h2 {
 @media only screen and (max-width: 767px) {
 
   /* #region  Home */
+  .home {
+    height: fit-content;
+    padding-block: 25px;
+  }
+
   #nuoLogo {
     margin-left: calc(.6vw + .1em)
   }
@@ -359,6 +342,7 @@ h2 {
 
   /* #endregion */
 
+  /* #region  Styles for all subpages */
   .pageImageCol {
     margin-left: 0;
   }
@@ -366,16 +350,46 @@ h2 {
   .pageImages {
     max-width: unset;
   }
+
+  /* #endregion */
+
+
+  //*What We Do
+  #whatwedoContainer {
+    height: unset;
+  }
+
+  //*Maintainable
+  #maintainableContainer {
+    height: unset;
+  }
+
+  //*Get In Touch
+  #getInTouchContainer {
+    height: unset;
+  } 
+  
 }
 
-@media only screen and (max-width: 576px){
+@media only screen and (max-width: 575px) {
 
   //*Modal
-  #modal{
+  #modal {
+    position: unset;
     min-width: 100%;
-    top: 0;
-    transform: translate(-50%, -15%);
+    transform: translate(0);
+    margin-top: 35px;
+
+    #close{
+      padding: calc(.3em + .3vw);
+
+      img{
+        margin: 0 0 0 auto;
+      }
+    }
   }
+
+
 
 }
 
@@ -393,13 +407,12 @@ h2 {
 
   //*Styles for all subpages
   .title {
-    // margin-top: 60px;
     margin-top: 189px;
   }
 
   //*GetInTouch
   .titleGetInTouch {
-    margin-top: 50px;
+    margin-top: 149px;
   }
 
 }
@@ -422,7 +435,7 @@ h2 {
 
   //*GetInTouch
   .titleGetInTouch {
-    margin-top: 74px;
+    margin-top: 171px;
   }
 
 }

@@ -23,10 +23,10 @@ function App() {
       <Router>
 
         <Routes>  
-          <Route path="/" element={<Home />} />
-          <Route path="/whatwedo" element={ data && <WhatWeDo data={data.content[0]}/>} />
-          <Route path="/maintainable" element={data && <Maintainable data={data.content[1]}/>} />
-          <Route path="/getintouch" element={data && <GetInTouch data={data.content[2]}/>} />
+          <Route path="/" element={ data && <Home data={data.content[0]}/>} />
+          <Route path="/whatwedo" element={ data && <WhatWeDo data={data.content[1]}/>} />
+          <Route path="/maintainable" element={data && <Maintainable data={data.content[2]}/>} />
+          <Route path="/getintouch" element={data && <GetInTouch data={data.content[3]}/>} />
 
             
         </Routes>

@@ -16,13 +16,19 @@ const WhatWeDo = ({ data }) => {
 
                 <Row>
                     <Col xs={12} md={3} className="pageImageCol">
+
                         <figure className="pageImages">
-                            <img src="/assets/images/desktop/front-whatwedo.png" 
-                            alt="What we do vertical banner"
-                            srcSet="/assets/images/mobile/mobil-whatwedo.png 730w,
-                            /assets/images/desktop/front-whatwedo.png 220w"
-                            sizes="(max-width: 767px) 730px, 220px"/>
+                            <picture>
+                                <source media="(max-width: 767px)" srcSet="/assets/images/mobile/mobil-whatwedo.png" />
+                                <source media="(min-width: 768px)" srcSet="/assets/images/desktop/front-whatwedo.png" />
+
+                                <img src="/assets/images/desktop/front-whatwedo.png"
+                                    alt="What We Do vertical banner" />
+                            </picture>
+
                         </figure>
+
+
                     </Col>
 
                     <Col xs={12} md={7} className="mt-2 mt-md-0 pb-5 pb-md-0">
@@ -30,21 +36,21 @@ const WhatWeDo = ({ data }) => {
                         <article>
                             {<h2>{data.headings[0]} <span id="secondHeadingWhatWeDo">{data.headings[1]}</span> ...</h2>}
 
-                            <p className="mainText">{data.paragraphs.map(item =>  item)}</p>
+                            <p className="mainText">{data.paragraphs.map(item => item)}</p>
 
-                                <span className="title d-none d-lg-block">{data.title}</span>
+                            <span className="title d-none d-lg-block">{data.title}</span>
                         </article>
 
                     </Col>
                 </Row>
 
-                <Row className="mt-5 pb-5 d-md-none">
-                    <Col>
-                    <figure className="nuoLogoSubPages  ms-auto"><img src="/assets/images/mobile/logo-a.png" alt="Nuo logo" /></figure>
+                <Row className="mt-5 pb-3 d-md-none">
+                    <Col className="px-0">
+                        <figure className="nuoLogoSubPages  ms-auto"><img src="/assets/images/mobile/logo-a.png" alt="Nuo logo" /></figure>
                     </Col>
                 </Row>
 
-                
+
 
 
 

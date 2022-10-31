@@ -118,9 +118,8 @@ h2 {
 
 .nuoLogoSubPages {
   width: 125px;
-  position: fixed;
-  right: 5%;
-  bottom: 2%;
+  position: sticky;
+  margin-left: auto;
   z-index: 5;
 }
 
@@ -267,27 +266,12 @@ h2 {
   #nuoLogo {
     margin-left: 120px;
   }
-  .home {
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-    padding-block: 25px;
-  }
   /* #endregion */
   .title {
-    margin-top: calc(0.6em + 11.5vw);
+    margin-top: 148px;
   }
   .titleGetInTouch {
-    margin-top: 25px;
-  }
-  #getInTouchContainer {
-    height: unset;
-  }
-  #maintainableContainer {
-    height: unset;
-  }
-  #whatwedoContainer {
-    height: unset;
+    margin-top: 164px;
   }
 }
 @media only screen and (max-width: 991px) {
@@ -299,6 +283,12 @@ h2 {
 }
 @media only screen and (max-width: 767px) {
   /* #region  Home */
+  .home {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding-block: 25px;
+  }
   #nuoLogo {
     margin-left: calc(0.6vw + 0.1em);
   }
@@ -311,19 +301,37 @@ h2 {
     max-width: 95vw;
   }
   /* #endregion */
+  /* #region  Styles for all subpages */
   .pageImageCol {
     margin-left: 0;
   }
   .pageImages {
     max-width: unset;
   }
+  /* #endregion */
+  #whatwedoContainer {
+    height: unset;
+  }
+  #maintainableContainer {
+    height: unset;
+  }
+  #getInTouchContainer {
+    height: unset;
+  }
 }
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 575px) {
   #modal {
+    position: unset;
     min-width: 100%;
-    top: 0;
-    -webkit-transform: translate(-50%, -15%);
-            transform: translate(-50%, -15%);
+    -webkit-transform: translate(0);
+            transform: translate(0);
+    margin-top: 35px;
+  }
+  #modal #close {
+    padding: calc(0.3em + 0.3vw);
+  }
+  #modal #close img {
+    margin: 0 0 0 auto;
   }
 }
 @media only screen and (min-width: 1200px) {
@@ -336,7 +344,7 @@ h2 {
     margin-top: 189px;
   }
   .titleGetInTouch {
-    margin-top: 50px;
+    margin-top: 149px;
   }
 }
 @media only screen and (min-width: 1400px) {
@@ -349,7 +357,7 @@ h2 {
     margin-top: 228px;
   }
   .titleGetInTouch {
-    margin-top: 74px;
+    margin-top: 171px;
   }
 }
 /* #endregion *//*# sourceMappingURL=App.css.map */
