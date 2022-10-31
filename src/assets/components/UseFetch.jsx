@@ -1,5 +1,5 @@
 //React imports 
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 const UseFetch = (url)=>{
 
@@ -12,8 +12,8 @@ const UseFetch = (url)=>{
 
             //Make sure the website accepts the fetch request for the file/api
             headers: {
-                'Accept': "application/json",
-                'Content-Type': "text/plain"
+                'Accept': 'application/json',
+                'Content-Type': 'text/plain'
             }
         })
         .then(res => res.json()) //When the data has been fetched. then make sure it is in json format

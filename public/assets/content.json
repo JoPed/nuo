@@ -5,21 +5,25 @@
                 {
                     "pcImg": "/assets/images/desktop/front-whatwedo-link.png",
                     "mobileImg": "/assets/images/mobile/mobil-whatwedo.png",
-                    "altText":  "What We Do page",
-                    "linkRef": "/whatwedo"
+                    "altText":  "What We Do",
+                    "linkRef": "/whatwedo",
+                    "uniqueID": "whatwedo"
 
                 },
                 {
                     "pcImg": "/assets/images/desktop/front-maintainable-link.png",
                     "mobileImg": "/assets/images/mobile/mobil-maintainable.png",
-                    "altText":  "MaintainAble page",
-                    "linkRef": "/maintainable"
+                    "altText":  "MaintainAble",
+                    "linkRef": "/maintainable",
+                    "uniqueID": "maintainable"
+
                 },
                 {
                     "pcImg": "/assets/images/desktop/front-getintouch-link.png",
                     "mobileImg": "/assets/images/mobile/mobil-getintouch.png",
-                    "altText":  "Get In Touch page",
-                    "linkRef": "/getintouch"
+                    "altText":  "Get In Touch",
+                    "linkRef": "/getintouch",
+                    "uniqueID": "getintouch"
                 }
             ]
 
@@ -47,7 +51,7 @@
                     "img": "/assets/images/desktop/whatwedo-small.png",
                     "altText":  "Get in touch with Employee 1",
                     "figCaption": "lt@coolish.com",
-                    "index": "0",
+                    "uniqueID": "Employee1",
                     "colClassNames": "px-0 me-3 me-md-2",
                     "colOffset": 3
                 },
@@ -55,7 +59,7 @@
                     "img": "/assets/images/desktop/maintainable-small.png",
                     "altText":  "Get in touch with Employee 2",
                     "figCaption": "pr@coolish.com",
-                    "index": "1",
+                    "uniqueID": "Employee2",
                     "colClassNames": "px-0 me-3 me-md-2",
                     "colOffset": 0
                 },
@@ -63,7 +67,7 @@
                     "img": "/assets/images/desktop/getintouch-small.png",
                     "altText":  "Get in touch with Employee 3",
                     "figCaption": "mn@coolish.com",
-                    "index": "2",
+                    "uniqueID": "Employee3",
                     "colClassNames": "px-0",
                     "colOffset": 0
                 }

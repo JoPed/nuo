@@ -1,22 +1,21 @@
 //React
-import React, { useState, useEffect, useRef } from "react";
-import ReactDOM from "react-dom";
+import React, { useState, useEffect, useRef } from 'react';
+import ReactDOM from 'react-dom';
 
 //React bootstrap - bootstrap
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import FormGroup from "react-bootstrap/FormGroup";
-import FormText from "react-bootstrap/FormText";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import FormGroup from 'react-bootstrap/FormGroup';
+import FormText from 'react-bootstrap/FormText';
 
 //react hook form
-import { useForm } from "react-hook-form";
+import { useForm } from 'react-hook-form';
 
 //Yup resolver
-import { yupResolver } from "@hookform/resolvers/yup";
+import { yupResolver } from '@hookform/resolvers/yup';
 
 //schema for validation
-import  {Schema}  from "./Schema";
-const schema = <Schema />
+import { schema } from './schema';
 
 
 
@@ -24,14 +23,14 @@ const schema = <Schema />
 
 const Modal = ({ isOpen, closeModal, employeeNames }) => {
 
-    //useForm hook. By setting the default values to "" the form fields values can be reset isSubmitSuccessful
+    //useForm hook. By setting the default values to '' the form fields values can be reset isSubmitSuccessful
     const { register, handleSubmit, formState: { errors, isSubmitSuccessful }, reset } = useForm({
         resolver: yupResolver(schema),
         defaultValues: {
-            name: "",
-            email: "",
-            subject: "",
-            textArea: ""
+            name: '',
+            email: '',
+            subject: '',
+            textArea: ''
         }
     });
 
@@ -39,7 +38,7 @@ const Modal = ({ isOpen, closeModal, employeeNames }) => {
     const [submittetData, setSubmittedData] = useState({});
 
     //useRef used to get the modal element, and scrollintoview
-    const ref = useRef();
+    let modalRef = useRef();
 
     //Setting the useState to the data object containing the values from the form
     const onSubmit = (formData) => {
@@ -48,7 +47,7 @@ const Modal = ({ isOpen, closeModal, employeeNames }) => {
     }
 
     const resetForm = () => {
-        reset({ name: "", email: "", subject: "", textArea: "" });
+        reset({ name: '', email: '', subject: '', textArea: '' });
     }
 
 
@@ -56,9 +55,10 @@ const Modal = ({ isOpen, closeModal, employeeNames }) => {
     useEffect(() => {
 
         if (isOpen) {
-            // ref.current.scrollIntoView();
 
-            document.querySelector("#modal").scrollIntoView({ behavior: "smooth", block: "nearest", inline: "nearest" });
+            console.log(modalRef);
+
+            modalRef.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
         }
 
 
@@ -69,10 +69,17 @@ const Modal = ({ isOpen, closeModal, employeeNames }) => {
 
     return ReactDOM.createPortal(
 
-        <div id="modal" ref={ref}>
+        <div id="modal" ref={(ref) => { modalRef = ref; }}>
 
             {/**Close icon */}
-            <div id="close"><img src="/assets/images/close.svg" alt="Close the modal window" onClick={closeModal} /></div>
+            <div id="close">
+
+                <img src="/assets/images/close.svg"
+                    alt="Close the modal window"
+                    onClick={closeModal}
+                />
+                
+            </div>
 
 
             <h2>Kundeservicemedarbjeder: {employeeNames}</h2>
@@ -82,11 +89,14 @@ const Modal = ({ isOpen, closeModal, employeeNames }) => {
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <Row className="mb-3">
                         <FormGroup>
-                            <Col className="mb-2"><label className="labels">Full name</label></Col>
+                            <Col className="mb-2">
+                                <label className="labels">Full name</label>
+                            </Col>
+
                             <Col>
                                 {/** Register the name input field and get the validation conditions from the schema object */}
                                 <input id="name" type="text" className="formInput"
-                                    {...register("name")} />
+                                    {...register('name')} />
 
                                 <FormText className="ms-1 errorText">
 
@@ -100,10 +110,13 @@ const Modal = ({ isOpen, closeModal, employeeNames }) => {
 
                     <Row className="mb-3">
                         <FormGroup>
-                            <Col className="mb-2"><label className="labels">Email</label></Col>
+                            <Col className="mb-2">
+                                <label className="labels">Email</label>
+                            </Col>
+
                             <Col>
                                 <input id="email" type="email" className="formInput"
-                                    {...register("email")} />
+                                    {...register('email')} />
 
                                 <FormText className="ms-1 errorText">
                                     {errors.email?.message}
@@ -115,10 +128,13 @@ const Modal = ({ isOpen, closeModal, employeeNames }) => {
 
                     <Row className="mb-3">
                         <FormGroup>
-                            <Col className="mb-2"><label className="labels">Subject</label></Col>
+                            <Col className="mb-2">
+                                <label className="labels">Subject</label>
+                            </Col>
+
                             <Col>
                                 <input id="subject" type="text" className="formInput"
-                                    {...register("subject")} />
+                                    {...register('subject')} />
 
                                 <FormText className="ms-1 errorText">
                                     {errors.subject?.message}
@@ -130,10 +146,13 @@ const Modal = ({ isOpen, closeModal, employeeNames }) => {
 
                     <Row className="mb-3">
                         <FormGroup>
-                            <Col className="mb-2"><label className="labels">Your message</label></Col>
+                            <Col className="mb-2">
+                                <label className="labels">Your message</label>
+                            </Col>
+
                             <Col>
                                 <textarea id="formTextArea"
-                                    {...register("textArea")} />
+                                    {...register('textArea')} />
 
                                 <FormText className="ms-1 errorText">
                                     {errors.textArea?.message}
@@ -147,7 +166,10 @@ const Modal = ({ isOpen, closeModal, employeeNames }) => {
                     {!isSubmitSuccessful && (
                         <Row className="mb-3">
                             <Col>
-                                <button className="mx-auto d-block" id="btnSubmit">Submit</button>
+                                <button className="mx-auto d-block"
+                                    id="btnSubmit">
+                                    Submit
+                                </button>
                             </Col>
                         </Row>
 
@@ -160,7 +182,10 @@ const Modal = ({ isOpen, closeModal, employeeNames }) => {
 
                             <Row className="mb-3">
                                 <Col>
-                                    <button className="mx-auto d-block" id="btnSubmit" onClick={resetForm}>Reset</button>
+                                    <button className="mx-auto d-block"
+                                        id="btnSubmit"
+                                        onClick={resetForm}>
+                                        Reset</button>
                                 </Col>
                             </Row>
 
@@ -168,7 +193,13 @@ const Modal = ({ isOpen, closeModal, employeeNames }) => {
                                 <Col>
                                     <FormText className="successText">
                                         {/**Make sure the first letter of the name is in uppercase, even if the value from the name input is in lower case */}
-                                        {submittetData.name.charAt(0).toUpperCase() + submittetData.name.slice(1)} your message has been sent. I will get back to you on {submittetData.email} within a couple of days
+
+                                        {
+                                            submittetData.name.charAt(0).toUpperCase() +
+                                            submittetData.name.slice(1)
+                                        }
+                                        your message has been sent. I will get back to you on
+                                        {submittetData.email} within a couple of days.
                                     </FormText>
                                 </Col>
                             </Row>
@@ -183,7 +214,7 @@ const Modal = ({ isOpen, closeModal, employeeNames }) => {
             </div>
 
             {/**Place the modal window inside the article on the getintouch page. */}
-        </div>, document.querySelector("#getInTouchArticle")
+        </div>, document.querySelector('#getInTouchArticle')
 
 
     );
