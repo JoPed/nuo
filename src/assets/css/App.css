@@ -22,6 +22,11 @@ img {
 /* #region  Text */
 h2 {
   color: #000000;
+  font-size: clamp(1rem, 1rem + 1vw, 3rem);
+}
+
+#modal h2 {
+  word-wrap: break-word;
 }
 
 #secondHeadingWhatWeDo {
@@ -116,11 +121,21 @@ h2 {
   max-width: 220px;
 }
 
+.logoContainer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  padding-top: 150px;
+}
+
 .nuoLogoSubPages {
   width: 125px;
-  position: sticky;
+  position: relative;
   margin-left: auto;
-  z-index: 5;
+  margin-right: 10px;
+  margin-bottom: 2%;
+  z-index: 1;
 }
 
 /* #endregion */
@@ -129,9 +144,9 @@ h2 {
   background-color: #abcfe6;
   height: 100vh;
 }
-#whatwedoContainer > div {
-  position: relative;
-  z-index: 1;
+
+#whatwedoContainer .logoContainer {
+  background-color: #abcfe6;
 }
 
 /* #endregion */
@@ -139,8 +154,9 @@ h2 {
   background-color: #bfddef;
   height: 100vh;
 }
-#maintainableContainer > div {
-  position: relative;
+
+#maintainableContainer .logoContainer {
+  background-color: #bfddef;
 }
 
 /* #region GetInTouch  */
@@ -148,19 +164,17 @@ h2 {
   background-color: #ffb472;
   height: 100vh;
 }
-#getInTouchContainer > div {
-  position: relative;
-}
 
 #getInTouchArticle {
   position: relative;
+  z-index: 2;
 }
 
 .employeePortrait {
   max-width: 130px;
-  position: relative;
   cursor: pointer;
-  z-index: 10;
+  position: relative;
+  z-index: 2;
 }
 
 .employeeCaption {
@@ -169,10 +183,13 @@ h2 {
   left: 50%;
   -webkit-transform: translate(-50%);
           transform: translate(-50%);
-  width: 95%;
   font-size: 0.8rem;
   font-weight: bold;
   text-align: center;
+}
+
+#getInTouchContainer .logoContainer {
+  background-color: #ffb472;
 }
 
 /* #endregion */
@@ -259,6 +276,14 @@ h2 {
   color: #ccc;
 }
 
+.successText {
+  color: #ccc;
+  font-weight: 500;
+  display: block;
+  text-align: center;
+  line-height: 1.5;
+}
+
 /* #endregion */
 /* #region  Media queries */
 @media only screen and (max-width: 1199px) {
@@ -284,10 +309,9 @@ h2 {
 @media only screen and (max-width: 767px) {
   /* #region  Home */
   .home {
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-    padding-block: 25px;
+    height: unset;
+    padding-top: 25px;
+    padding-bottom: 100px;
   }
   #nuoLogo {
     margin-left: calc(0.6vw + 0.1em);
@@ -311,6 +335,20 @@ h2 {
   /* #endregion */
   #whatwedoContainer {
     height: unset;
+    padding-bottom: 100px;
+  }
+  #maintainableContainer {
+    height: unset;
+    padding-bottom: 100px;
+  }
+  #getInTouchContainer {
+    height: unset;
+    padding-bottom: 150px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  #whatwedoContainer {
+    height: unset;
   }
   #maintainableContainer {
     height: unset;
@@ -318,14 +356,14 @@ h2 {
   #getInTouchContainer {
     height: unset;
   }
-}
-@media only screen and (max-width: 575px) {
   #modal {
-    position: unset;
+    position: relative;
+    z-index: 5;
     min-width: 100%;
     -webkit-transform: translate(0);
             transform: translate(0);
     margin-top: 35px;
+    left: 0;
   }
   #modal #close {
     padding: calc(0.3em + 0.3vw);

@@ -1,49 +1,45 @@
+//React router dom
 import { Link } from "react-router-dom";
 
+//React bootstrap imports - this is the recommended way to import them
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-const Home = ({data}) => {
-
-
+//*Landingpage
+const Home = ({ data }) => {
 
     return (
-        <Container fluid className="home px-0">
 
+        <Container fluid className="home px-0"> {/** Parent container with background color and height  */}
+
+            {/** Content container*/}
             <Container fluid="lg" className="px-0">
 
+                {/** Navbar - containing images not text  */}
                 <nav className="container-fluid" id="homeNavigation">
 
-                    <figure id="nuoLogo"><img src="assets/images/logo-final.png" /></figure>
+                    <figure id="nuoLogo"><img src="assets/images/logo-final.png" alt="Nuo logo"/></figure>
 
                     <ul>
-                        <Row className="justify-content-center gy-4">                            
+                        {/** The row of images */}
+                        <Row className="justify-content-center gy-4">
 
+                            {/** Looping through the home array from content.json making three Col elements with a image each*/}
                             {data.home.map((item, index) => (
                                 <Col xs={12} md={3} className="px-3 d-flex justify-content-center" key={index}>
                                     <li>
-                                        {/* <Link to={item.linkRef}>
-                                            <figure className="homePage_ImageContainer">
-                                                <img className="mx-auto" src={item.pcImg}
-                                                srcSet={`${item.mobileImg} 730w, ${item.pcImg} 220w`}
-                                                sizes="(max-width: 767px) 730px, 220px"/>
-                                                
-                                                {index == 2 ? <span id="moreToCome">And yet... more to come</span> : ""}
-
-                                            </figure>
-
-                                        </Link> */}
 
                                         <Link to={item.linkRef}>
                                             <picture className="homePage_ImageContainer">
-
+                                                {/** Depending on screensize use the correct image */}
                                                 <source media="(max-width: 767px)" srcSet={item.mobileImg} />
                                                 <source media="(min-width: 768px)" srcSet={item.pcImg} />
 
-                                                <img className="mx-auto" src={item.pcImg} alt={item.altText}/>
-                                                
-                                                {index == 2 ? <span id="moreToCome">And yet... more to come</span> : ""}
+                                                <img className="mx-auto" src={item.pcImg} alt={item.altText} />
+
+                                                {/**Placing the more to come text box below the last image (which has an index value of 2)  */}
+                                                {index === 2 ? <span id="moreToCome">And yet... more to come</span> : ""}
 
                                             </picture>
 
@@ -54,9 +50,6 @@ const Home = ({data}) => {
                             ))}
 
                         </Row>
-
-
-
 
                     </ul>
 

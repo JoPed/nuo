@@ -1,6 +1,7 @@
 import * as yup from "yup";
 
-export const schema = yup.object().shape({
+//*Yup schema used for form validation in Modal.js
+export const Schema = yup.object().shape({
     name: yup
     .string()    
     .matches("^[a-zA-Z]+$", "Name can only contain letters")

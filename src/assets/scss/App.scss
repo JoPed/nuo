@@ -5,6 +5,7 @@ html {
   font-family: Tahoma, Geneva, Verdana, sans-serif;
 }
 
+//Resetting margin & padding on every element, setting box sizing
 *,
 *::after,
 *:before {
@@ -22,6 +23,15 @@ img {
 /* #region  Text */
 h2 {
   color: $col_Heading;
+
+  //Making sure that the font size scale with screen size. clamp(min, prefered, max)
+  font-size: clamp(1rem, calc(1rem + 1vw), 3rem);
+}
+
+
+#modal h2{
+  //break up the word if it is to long
+  word-wrap: break-word;
 }
 
 #secondHeadingWhatWeDo {
@@ -39,11 +49,13 @@ h2 {
 .mainText {
   white-space: pre-line;
   color: $col_MainText;
+  //Making sure that the font size scale with screen size. clamp(min, prefered, max)
   font-size: clamp(12px, calc(.6rem + .8vw), 1rem);
   position: relative;
   z-index: 10;
 }
 
+//the text boxes on the three subpages
 .title,
 .titleGetInTouch {
   margin-left: auto;
@@ -58,9 +70,6 @@ h2 {
   width: 115px;
   text-align: center;
 }
-
-
-
 /* #endregion */
 
 
@@ -71,6 +80,7 @@ h2 {
   height: 100vh;
 }
 
+//the navigation from the landingpage, with the images
 #homeNavigation {
   margin: 0 auto;
   display: flex;
@@ -93,10 +103,12 @@ h2 {
 
 }
 
+//top logo
 #nuoLogo {
   width: 150px;
 }
 
+//the text box below the last image on the home page
 #moreToCome {
   background-color: $col_TextBg;
   color: $col_MainText;
@@ -120,12 +132,21 @@ h2 {
   max-width: 220px;
 }
 
+.logoContainer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  padding-top: 150px;
+}
+
 .nuoLogoSubPages {
   width: 125px;
-
-  position: sticky;
+  position: relative;
   margin-left: auto;
-  z-index: 5;
+  margin-right: 10px;
+  margin-bottom: 2%;
+  z-index: 1;
 }
 
 /* #endregion */
@@ -135,13 +156,10 @@ h2 {
 #whatwedoContainer {
   background-color: $col_Bg_WhatWeDo;
   height: 100vh;
+}
 
-  &>div {
-    position: relative;
-    z-index: 1;
-  }
-
-
+#whatwedoContainer .logoContainer{
+  background-color: $col_Bg_WhatWeDo;
 }
 
 /* #endregion */
@@ -150,10 +168,10 @@ h2 {
 #maintainableContainer {
   background-color: $col_Bg_Maintainable;
   height: 100vh;
+}
 
-  &>div {
-    position: relative;
-  }
+#maintainableContainer .logoContainer{
+  background-color: $col_Bg_Maintainable;
 }
 
 //*GetInTouch
@@ -161,22 +179,18 @@ h2 {
 #getInTouchContainer {
   background-color: $col_Bg_GetInTouch;
   height: 100vh;
-
-  &>div {
-    position: relative;
-  }
 }
 
 #getInTouchArticle {
   position: relative;
+  z-index: 2;
 }
 
 .employeePortrait {
   max-width: 130px;
-  position: relative;
   cursor: pointer;
-
-  z-index: 10;
+  position: relative;
+  z-index: 2;
 }
 
 .employeeCaption {
@@ -184,10 +198,13 @@ h2 {
   bottom: -20px;
   left: 50%;
   transform: translate(-50%);
-  width: 95%;
   font-size: .8rem;
   font-weight: bold;
   text-align: center;
+}
+
+#getInTouchContainer .logoContainer{
+  background-color: $col_Bg_GetInTouch;
 }
 
 /* #endregion */
@@ -276,13 +293,21 @@ h2 {
   }
 }
 
+//Formtext error message
 .errorText {
   color: #ccc;
 }
 
+//Formtext, when form is submitted
+.successText{
+  color: #ccc;
+  font-weight: 500;
+  display: block;
+  text-align: center;
+  line-height: 1.5;
+}
+
 /* #endregion */
-
-
 
 //*Media query
 /* #region  Media queries */
@@ -322,8 +347,9 @@ h2 {
 
   /* #region  Home */
   .home {
-    height: fit-content;
-    padding-block: 25px;
+    height: unset;
+    padding-top: 25px;
+    padding-bottom: 100px;
   }
 
   #nuoLogo {
@@ -357,6 +383,30 @@ h2 {
   //*What We Do
   #whatwedoContainer {
     height: unset;
+    padding-bottom: 100px;
+  }
+
+  //*Maintainable
+  #maintainableContainer {
+    height: unset;
+    padding-bottom: 100px;
+
+  }
+
+  //*Get In Touch
+  #getInTouchContainer {
+    height: unset;
+    padding-bottom: 150px;
+
+  } 
+  
+}
+
+@media only screen and (max-width: 575px) {
+
+  //*What We Do
+  #whatwedoContainer {
+    height: unset;
   }
 
   //*Maintainable
@@ -367,18 +417,16 @@ h2 {
   //*Get In Touch
   #getInTouchContainer {
     height: unset;
-  } 
-  
-}
-
-@media only screen and (max-width: 575px) {
+  }
 
   //*Modal
   #modal {
-    position: unset;
+    position: relative;
+    z-index: 5;
     min-width: 100%;
     transform: translate(0);
     margin-top: 35px;
+    left: 0;
 
     #close{
       padding: calc(.3em + .3vw);

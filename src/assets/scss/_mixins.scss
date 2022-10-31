@@ -1,3 +1,4 @@
+//*Used for styling of the navlink when they have active class on them
 @mixin navLinkActiveStyle($color, $setTopValue) {
 
     @if($setTopValue){
