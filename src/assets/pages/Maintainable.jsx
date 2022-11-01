@@ -10,12 +10,13 @@ import Col from 'react-bootstrap/Col';
 const Maintainable = ({ content }) => {
 
     return (
-        <Container fluid id="maintainableContainer"> {/** Parent container with background color and height  */}
+        <Container fluid id="maintainableContainer">
 
             {/**Content container */}
             <Container fluid="lg">
 
-                {/** Subpage navigation (the three box and the image (to navigate between pages) */}
+                {/** Subpage navigation 
+                 * (the three box and the image (to navigate between pages) */}
                 <Navigation />
 
                 {/** Row of front image and text */}
@@ -24,7 +25,8 @@ const Maintainable = ({ content }) => {
 
                         <figure className="pageImages">
 
-                            {/** Choose the correct image depending on screen size. Default if something goes wrong will be the src from <img /> element */}
+                            {/** Choose the correct image depending on screen size. 
+                             * Default if something goes wrong will be the src from <img /> element */}
                             <picture>
                                 <source
                                     media="(max-width: 767px)"
@@ -47,10 +49,13 @@ const Maintainable = ({ content }) => {
                     </Col>
 
                     {/**Column of text */}
-                    <Col md={7} className="mt-2 mt-md-0 pb-5 pb-md-0">
+                    <Col md={7}
+                        className="mt-2 mt-md-0 pb-5 pb-md-0"
+                    >
 
                         <article>
-                            {/* Take the first element of heading array inside content.json and directly inside h2, then take second element of heading array and put into a span tag to change it's color. */}
+                            {/* Take the first element of heading array inside content.json and directly inside h2, 
+                            then take second element of heading array and put into a span tag to change it's color. */}
                             {
                                 <h2>{content.headings[0]}
                                     <span id="secondHeadingMaintainable">
@@ -74,17 +79,17 @@ const Maintainable = ({ content }) => {
                     </Col>
                 </Row>
 
-                {/**logo, but only show on screens below 768px*/}
-                <div className="logoContainer">
-                    <figure className="nuoLogoSubPages d-md-none">
-                        <img
-                            src="/assets/images/mobile/logo-a.png"
-                            alt="Nuo logo"
-                        />
-                    </figure>
-                </div>
-
             </Container>
+
+            <Row className="logo-row">
+                {/**logo, but only show on screens below 768px*/}
+                <figure className="nuoLogoSubPages d-md-none">
+                    <img src="/assets/images/mobile/logo-a.png"
+                        alt="Nuo logo"
+
+                    />
+                </figure>
+            </Row>
 
         </Container>
 

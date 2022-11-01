@@ -11,16 +11,21 @@ const Home = ({ content }) => {
 
     return (
 
-        <Container fluid className="home px-0"> {/** Parent container with background color and height  */}
+        <Container fluid className="home px-0">
+
 
             {/** Content container*/}
             <Container fluid="lg" className="px-0">
 
                 {/** Navbar - containing images not text  */}
-                <nav className="container-fluid" id="homeNavigation">
+                <nav
+                    className="container-fluid"
+                    id="homeNavigation"
+                >
 
                     <figure id="nuoLogo">
-                        <img src="assets/images/logo-final.png"
+                        <img
+                            src="assets/images/logo-final.png"
                             alt="Nuo logo"
                         />
                     </figure>
@@ -29,7 +34,8 @@ const Home = ({ content }) => {
                         {/** The row of images */}
                         <Row className="justify-content-center gy-4">
 
-                            {/** Looping through the home array from content.json making three Col elements with a image each*/}
+                            {/** Looping through the home array from content.json 
+                              making three Col elements with a image each*/}
                             {content.home.map((item, index) => (
                                 <Col
                                     xs={12}
@@ -52,7 +58,10 @@ const Home = ({ content }) => {
                                                     srcSet={item.pcImg}
                                                 />
 
-                                                <img className="mx-auto" src={item.pcImg} alt={item.altText} />
+                                                <img 
+                                                className="mx-auto" 
+                                                src={item.pcImg} 
+                                                alt={item.altText} />
 
                                                 {/**Placing the more to come text box below the last image (which has an index value of 2)  */}
                                                 {index === 2 ?

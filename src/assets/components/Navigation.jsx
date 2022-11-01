@@ -1,31 +1,30 @@
 //React router dom
-import { useNavigate, NavLink  } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 
 //Minified css (compiled from SCSS)
 import "../css/Navigation.min.css";
 
 const Navigation = () => {
 
-    //instatiating a variable to use the useNavigate() hook
     const navigate = useNavigate();
 
-    //Function to be called when back image is pressed
-    const backToHome = () => {
+    const goToHome = () => {
 
-        //the "/" represents the root of the project, which is the Home component
-        navigate('/');
+        navigate("/");
     }
 
     return (
+        <nav id="navbar">
+            {/** Navbar with image and three boxes. 
+            * Has a seperate stylesheet -> Navigation.scss*/}
 
 
-        <nav id="navbar">{/** Navbar with image and three boxes. Has a seperate stylesheet -> Navigation.scss*/}
             <ul id="navlist">
                 <li>
                     <img
                         src="/assets/images/back.svg"
                         alt="Back to home"
-                        onClick={backToHome} />
+                        onClick={goToHome} />
                 </li>
 
                 <li className="ms-auto ms-md-0">

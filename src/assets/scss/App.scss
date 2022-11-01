@@ -29,7 +29,7 @@ h2 {
 }
 
 
-#modal h2{
+#modal h2 {
   //break up the word if it is to long
   word-wrap: break-word;
 }
@@ -51,8 +51,6 @@ h2 {
   color: $col_MainText;
   //Making sure that the font size scale with screen size. clamp(min, prefered, max)
   font-size: clamp(12px, calc(.6rem + .8vw), 1rem);
-  position: relative;
-  z-index: 10;
 }
 
 //the text boxes on the three subpages
@@ -69,7 +67,10 @@ h2 {
   font-weight: bold;
   width: 115px;
   text-align: center;
+  position: relative;
+  z-index: 10;
 }
+
 /* #endregion */
 
 
@@ -77,7 +78,7 @@ h2 {
 /* #region  Home */
 .home {
   background: $col_Bg_Home;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 //the navigation from the landingpage, with the images
@@ -130,23 +131,19 @@ h2 {
 
 .pageImages {
   max-width: 220px;
-}
-
-.logoContainer{
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  left: 0;
-  padding-top: 150px;
+  position: relative;
 }
 
 .nuoLogoSubPages {
   width: 125px;
-  position: relative;
-  margin-left: auto;
-  margin-right: 10px;
-  margin-bottom: 2%;
   z-index: 1;
+  margin-bottom: 15px;
+}
+
+.logo-row {
+  margin-top: 100px;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 /* #endregion */
@@ -155,11 +152,6 @@ h2 {
 /* #region WhatWeDo  */
 #whatwedoContainer {
   background-color: $col_Bg_WhatWeDo;
-  height: 100vh;
-}
-
-#whatwedoContainer .logoContainer{
-  background-color: $col_Bg_WhatWeDo;
 }
 
 /* #endregion */
@@ -167,30 +159,27 @@ h2 {
 //*Maintainable
 #maintainableContainer {
   background-color: $col_Bg_Maintainable;
-  height: 100vh;
 }
 
-#maintainableContainer .logoContainer{
-  background-color: $col_Bg_Maintainable;
-}
 
 //*GetInTouch
 /* #region GetInTouch  */
 #getInTouchContainer {
   background-color: $col_Bg_GetInTouch;
-  height: 100vh;
+
 }
 
 #getInTouchArticle {
   position: relative;
-  z-index: 2;
 }
 
 .employeePortrait {
   max-width: 130px;
-  cursor: pointer;
   position: relative;
-  z-index: 2;
+
+  &.enablePointer {
+    cursor: pointer;
+  }
 }
 
 .employeeCaption {
@@ -201,10 +190,7 @@ h2 {
   font-size: .8rem;
   font-weight: bold;
   text-align: center;
-}
-
-#getInTouchContainer .logoContainer{
-  background-color: $col_Bg_GetInTouch;
+  color: $col_MainText;
 }
 
 /* #endregion */
@@ -227,7 +213,6 @@ h2 {
 
     img {
       position: relative;
-      display: block;
       width: 30px;
       height: 30px;
       margin: calc(.3em + .3vw);
@@ -241,7 +226,26 @@ h2 {
     padding: 10px;
   }
 
+  //*Modal
+  &.mobileView {
+    position: relative;
+    min-width: 100%;
+    transform: translate(0);
+    margin-top: 35px;
+    left: 0;
+
+    #close {
+      padding: calc(.3em + .3vw);
+
+      img {
+        margin: 0 0 0 auto;
+      }
+    }
+  }
+
 }
+
+
 
 .labels {
   color: $col_MainText;
@@ -299,7 +303,7 @@ h2 {
 }
 
 //Formtext, when form is submitted
-.successText{
+.successText {
   color: #ccc;
   font-weight: 500;
   display: block;
@@ -317,6 +321,7 @@ h2 {
   #nuoLogo {
     margin-left: 120px;
   }
+
   /* #endregion */
 
   //*Styles for all subpages
@@ -346,12 +351,6 @@ h2 {
 @media only screen and (max-width: 767px) {
 
   /* #region  Home */
-  .home {
-    height: unset;
-    padding-top: 25px;
-    padding-bottom: 100px;
-  }
-
   #nuoLogo {
     margin-left: calc(.6vw + .1em)
   }
@@ -379,70 +378,7 @@ h2 {
 
   /* #endregion */
 
-
-  //*What We Do
-  #whatwedoContainer {
-    height: unset;
-    padding-bottom: 100px;
-  }
-
-  //*Maintainable
-  #maintainableContainer {
-    height: unset;
-    padding-bottom: 100px;
-
-  }
-
-  //*Get In Touch
-  #getInTouchContainer {
-    height: unset;
-    padding-bottom: 150px;
-
-  } 
-  
 }
-
-@media only screen and (max-width: 575px) {
-
-  //*What We Do
-  #whatwedoContainer {
-    height: unset;
-  }
-
-  //*Maintainable
-  #maintainableContainer {
-    height: unset;
-  }
-
-  //*Get In Touch
-  #getInTouchContainer {
-    height: unset;
-  }
-
-  //*Modal
-  #modal {
-    position: relative;
-    z-index: 5;
-    min-width: 100%;
-    transform: translate(0);
-    margin-top: 35px;
-    left: 0;
-
-    #close{
-      padding: calc(.3em + .3vw);
-
-      img{
-        margin: 0 0 0 auto;
-      }
-    }
-  }
-
-
-
-}
-
-
-
 
 @media only screen and (min-width: 1200px) {
 
@@ -460,7 +396,7 @@ h2 {
 
   //*GetInTouch
   .titleGetInTouch {
-    margin-top: 149px;
+    margin-top: 167px;
   }
 
 }

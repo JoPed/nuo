@@ -16,8 +16,10 @@ const UseFetch = (url)=>{
                 'Content-Type': 'text/plain'
             }
         })
-        .then(res => res.json()) //When the data has been fetched. then make sure it is in json format
-        .then(data =>setData(data)); //then use the setData function (useState) to set the data
+        //When the data has been fetched. then make sure it is in json format
+        .then(res => res.json()) 
+        //then use the setData function (useState) to set the data
+        .then(data =>setData(data)); 
 
     }, [url]);
 

@@ -8,31 +8,59 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 //React
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-import PropTypes from 'prop-types';
+import { isMobile, isTablet, isDesktop} from 'react-device-detect';
+import { useRef } from 'react';
 
 //* Subpage GetInTouch
 const GetInTouch = ({ content }) => {
-    // getting and setting the open state of the modal window (true = open, false = closed)
-    const [isOpen, setIsOpen] = useState(false);
 
-    //getting and setting index used to show dymanic data in the modal window, depending of which image is pressed
-    const [index, setIndex] = useState(0);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const [employeeCount, setEmployeeCount] = useState(0);
+
+    const employeePortraitRef = useRef([]);
+
+    useEffect(() => {
+
+        employeePortraitRef.current.map((ref) => {
+
+            if (isDesktop) {
+
+                console.log("isDesktop");
+
+                if (!ref.classList.contains("enablePointer")) {
+                    ref.classList.add("enablePointer");
+                }
+            }
+            else if (isTablet || isMobile) {
+
+                console.log("tablet or mobile");
+
+                if (ref.classList.contains("enablePointer")) {
+                    ref.classList.remove("enablePointer");
+                }
+            }
+        })
+
+    }, [])
 
     /** When one of the employee images is pressed open the modal window */
     const openModal = e => {
-        setIsOpen(true);
-        setIndex(e.currentTarget.dataset.index);
+        e.preventDefault();
+        setIsModalOpen(true);
+        setEmployeeCount(e.currentTarget.dataset.index);
     }
 
     /** When close button is pressed, close the modal */
-    const closeModal = () => setIsOpen(false);
+    const closeModal = () => setIsModalOpen(false);
 
 
     return (
-        <Container fluid id="getInTouchContainer"> {/** Parent container with background color and height  */}
 
+
+        <Container fluid id='getInTouchContainer'> {/** Parent container with background color and height  */}
             <Container fluid="lg">
 
                 {/** Subpage navigation (the three box and the image (to navigate between pages) */}
@@ -87,25 +115,31 @@ const GetInTouch = ({ content }) => {
                             <Row className="mt-4 justify-content-center justify-content-lg-start">
 
                                 {/* Takes the data from content.json and iterates the employeeImages array */}
-                                {content.employeeImages.map(item => (
+                                {content.employeeImages.map((item, index) => (
 
                                     <Col xs={3}
                                         lg={{ span: 2, offset: item.colOffset }}
                                         className={item.colClassNames}
                                         key={item.uniqueID}>
 
-                                        <figure className="employeePortrait">
+                                        {/** using ref to make an useRef array, to store multiple employeePortrait images */}
+                                        <figure className="employeePortrait"
+                                            ref={ref => (employeePortraitRef.current[index] = ref)}
+                                        >
                                             <img
                                                 src={item.img}
                                                 alt={item.altText}
-                                                data-index={index}
+                                                data-index={employeeCount}
                                                 onClick={openModal}
+                                                draggable="false"
                                             />
 
                                             <figcaption className="employeeCaption">
                                                 {item.figCaption}
                                             </figcaption>
                                         </figure>
+
+
                                     </Col>
                                 ))}
                             </Row>
@@ -120,36 +154,30 @@ const GetInTouch = ({ content }) => {
 
                 </Row>
 
-                {/**logo, but only show on screens below 768px*/}
-                <div className="logoContainer">
-                    <figure className="nuoLogoSubPages d-md-none">
-                        <img src="/assets/images/mobile/logo-b.png"
-                            alt="Nuo logo"
-                        />
-                    </figure>
-                </div>
-
-
             </Container>
 
             {/* Modal window compoment */}
             <Modal
-                isOpen={isOpen}
+                isModalOpen={isModalOpen}
                 closeModal={closeModal}
-                employeeNames={content.employeeNames[index]}
+                employeeNames={content.employeeNames[employeeCount]}
             />
 
+            <Row className="logo-row">
+                {/**logo, but only show on screens below 768px*/}
+                <figure className="nuoLogoSubPages d-md-none">
+                    <img src="/assets/images/mobile/logo-b.png"
+                        alt="Nuo logo"
+
+                    />
+                </figure>
+            </Row>
+
         </Container>
+
+
     )
 
-}
-
-GetInTouch.propTypes = {
-    content: PropTypes.object
-}
-
-GetInTouch.defaultProps = {
-    content: {}
 }
 
 export default GetInTouch;

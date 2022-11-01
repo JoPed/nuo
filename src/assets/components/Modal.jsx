@@ -2,6 +2,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 
+import { isMobile, isTablet, isDesktop} from 'react-device-detect';
+
+
 //React bootstrap - bootstrap
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -15,17 +18,14 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 //schema for validation
-import { schema } from './schema';
+import { Schema } from './Schema';
 
 
-
-
-
-const Modal = ({ isOpen, closeModal, employeeNames }) => {
+const Modal = ({ isModalOpen, closeModal, employeeNames }) => {
 
     //useForm hook. By setting the default values to '' the form fields values can be reset isSubmitSuccessful
     const { register, handleSubmit, formState: { errors, isSubmitSuccessful }, reset } = useForm({
-        resolver: yupResolver(schema),
+        resolver: yupResolver(Schema),
         defaultValues: {
             name: '',
             email: '',
@@ -44,6 +44,7 @@ const Modal = ({ isOpen, closeModal, employeeNames }) => {
     const onSubmit = (formData) => {
 
         setSubmittedData(formData);
+
     }
 
     const resetForm = () => {
@@ -54,22 +55,32 @@ const Modal = ({ isOpen, closeModal, employeeNames }) => {
     //Used to make sure isSubmitSuccessful is set to true, before cheking the value.
     useEffect(() => {
 
-        if (isOpen) {
+        if (isModalOpen) {
+            modalRef.current.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
 
-            console.log(modalRef);
+            if (isDesktop) {
 
-            modalRef.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+                if (modalRef.current.classList.contains("mobileView")) {
+                    modalRef.current.classList.remove("mobileView");
+                }
+            }
+            else if (isTablet || isMobile) {
+
+                if (!modalRef.current.classList.contains("mobileView")) {
+                    modalRef.current.classList.add("mobileView");
+                }
+            }
         }
 
-
-    }, [isOpen]);
+    }, [isModalOpen]);
 
     //Is the open useState from GetInTouch component is false then don't render anything.
-    if (!isOpen) return false;
+    if (!isModalOpen) return false;
+
 
     return ReactDOM.createPortal(
 
-        <div id="modal" ref={(ref) => { modalRef = ref; }}>
+        <div id="modal" ref={modalRef}>
 
             {/**Close icon */}
             <div id="close">
@@ -78,9 +89,8 @@ const Modal = ({ isOpen, closeModal, employeeNames }) => {
                     alt="Close the modal window"
                     onClick={closeModal}
                 />
-                
-            </div>
 
+            </div>
 
             <h2>Kundeservicemedarbjeder: {employeeNames}</h2>
 
@@ -115,8 +125,12 @@ const Modal = ({ isOpen, closeModal, employeeNames }) => {
                             </Col>
 
                             <Col>
-                                <input id="email" type="email" className="formInput"
-                                    {...register('email')} />
+                                <input
+                                    id="email"
+                                    type="email"
+                                    className="formInput"
+                                    {...register('email')}
+                                />
 
                                 <FormText className="ms-1 errorText">
                                     {errors.email?.message}
@@ -133,8 +147,12 @@ const Modal = ({ isOpen, closeModal, employeeNames }) => {
                             </Col>
 
                             <Col>
-                                <input id="subject" type="text" className="formInput"
-                                    {...register('subject')} />
+                                <input
+                                    id="subject"
+                                    type="text"
+                                    className="formInput"
+                                    {...register('subject')}
+                                />
 
                                 <FormText className="ms-1 errorText">
                                     {errors.subject?.message}
@@ -175,11 +193,11 @@ const Modal = ({ isOpen, closeModal, employeeNames }) => {
 
                     )}
 
-                    {/**If something has been submitted change submit button to Reset button and make a new FormText element with a success message */}
+                    {/**If something has been submitted change submit button to 
+                     * Reset button and make a new FormText element with a success message */}
                     {isSubmitSuccessful && (
 
                         <>
-
                             <Row className="mb-3">
                                 <Col>
                                     <button className="mx-auto d-block"
@@ -192,21 +210,18 @@ const Modal = ({ isOpen, closeModal, employeeNames }) => {
                             <Row>
                                 <Col>
                                     <FormText className="successText">
-                                        {/**Make sure the first letter of the name is in uppercase, even if the value from the name input is in lower case */}
-
+                                        {/**Make sure the first letter of the name is in uppercase, 
+                                         * even if the value from the name input is in lower case */}
                                         {
                                             submittetData.name.charAt(0).toUpperCase() +
-                                            submittetData.name.slice(1)
+                                            submittetData.name.slice(1) + ' '
                                         }
                                         your message has been sent. I will get back to you on
-                                        {submittetData.email} within a couple of days.
+                                        {' ' + submittetData.email} within a couple of days.
                                     </FormText>
                                 </Col>
                             </Row>
                         </>
-
-
-
                     )}
 
                 </form>
