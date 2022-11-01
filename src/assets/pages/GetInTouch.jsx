@@ -8,10 +8,9 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 //React
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef} from 'react';
 
 import { isMobile, isTablet, isDesktop} from 'react-device-detect';
-import { useRef } from 'react';
 
 //* Subpage GetInTouch
 const GetInTouch = ({ content }) => {
@@ -24,19 +23,17 @@ const GetInTouch = ({ content }) => {
 
     useEffect(() => {
 
-        employeePortraitRef.current.map((ref) => {
+        /*Make sure desktop versions of the employeePortrait element have css class enablePointer
+            And that is not on  employeePortrait elements for tablet and mobile */        
+        employeePortraitRef.current.forEach((ref) => {
 
             if (isDesktop) {
-
-                console.log("isDesktop");
 
                 if (!ref.classList.contains("enablePointer")) {
                     ref.classList.add("enablePointer");
                 }
             }
             else if (isTablet || isMobile) {
-
-                console.log("tablet or mobile");
 
                 if (ref.classList.contains("enablePointer")) {
                     ref.classList.remove("enablePointer");

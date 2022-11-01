@@ -12,7 +12,7 @@ const WhatWeDo = ({ content }) => {
         <Container fluid id="whatwedoContainer">
 
             {/**Content container */}
-            <Container fluid="lg" >
+            <Container fluid="lg">
 
                 {/** Subpage navigation (the three box and the image (to navigate between pages) */}
                 <Navigation />
@@ -80,7 +80,7 @@ const WhatWeDo = ({ content }) => {
 
             </Container>
 
-            <Row className="logo-row">
+            <div className="logo-row">
                 {/**logo, but only show on screens below 768px*/}
                 <figure className="nuoLogoSubPages d-md-none">
                     <img src="/assets/images/mobile/logo-a.png"
@@ -88,7 +88,7 @@ const WhatWeDo = ({ content }) => {
 
                     />
                 </figure>
-            </Row>
+            </div>
 
         </Container>
     )

@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 
-import { isMobile, isTablet, isDesktop} from 'react-device-detect';
+import { isMobile, isTablet, isDesktop, } from 'react-device-detect';
 
 
 //React bootstrap - bootstrap
@@ -19,6 +19,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 
 //schema for validation
 import { Schema } from './Schema';
+
+import "../css/Modal.min.css";
 
 
 const Modal = ({ isModalOpen, closeModal, employeeNames }) => {
@@ -42,9 +44,7 @@ const Modal = ({ isModalOpen, closeModal, employeeNames }) => {
 
     //Setting the useState to the data object containing the values from the form
     const onSubmit = (formData) => {
-
         setSubmittedData(formData);
-
     }
 
     const resetForm = () => {
@@ -58,6 +58,7 @@ const Modal = ({ isModalOpen, closeModal, employeeNames }) => {
         if (isModalOpen) {
             modalRef.current.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
 
+            //*Change the modal window on tablet and mobile by adding/removing class mobileView
             if (isDesktop) {
 
                 if (modalRef.current.classList.contains("mobileView")) {

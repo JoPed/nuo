@@ -28,7 +28,6 @@ h2 {
   font-size: clamp(1rem, calc(1rem + 1vw), 3rem);
 }
 
-
 #modal h2 {
   //break up the word if it is to long
   word-wrap: break-word;
@@ -137,13 +136,13 @@ h2 {
 .nuoLogoSubPages {
   width: 125px;
   z-index: 1;
-  margin-bottom: 15px;
+  // margin-bottom: 15px;
 }
 
 .logo-row {
-  margin-top: 100px;
-  justify-content: flex-end;
-  align-items: flex-end;
+  position: absolute;
+  right: 2%;
+  bottom: 2%;
 }
 
 /* #endregion */
@@ -152,6 +151,10 @@ h2 {
 /* #region WhatWeDo  */
 #whatwedoContainer {
   background-color: $col_Bg_WhatWeDo;
+  min-height: 100vh;
+
+  position: relative;
+  
 }
 
 /* #endregion */
@@ -159,6 +162,10 @@ h2 {
 //*Maintainable
 #maintainableContainer {
   background-color: $col_Bg_Maintainable;
+  min-height: 100vh;
+
+  position: relative;
+
 }
 
 
@@ -166,6 +173,10 @@ h2 {
 /* #region GetInTouch  */
 #getInTouchContainer {
   background-color: $col_Bg_GetInTouch;
+  min-height: 100vh;
+
+  position: relative;
+
 
 }
 
@@ -191,124 +202,6 @@ h2 {
   font-weight: bold;
   text-align: center;
   color: $col_MainText;
-}
-
-/* #endregion */
-
-
-//*Modal
-/* #region  Modal */
-#modal {
-  position: absolute;
-  min-width: 430px;
-  background-color: $col_Navlink_WhatWeDo;
-  left: 50%;
-  top: 5%;
-  transform: translate(-50%);
-  z-index: 99;
-
-  #close {
-    position: relative;
-    width: 100%;
-
-    img {
-      position: relative;
-      width: 30px;
-      height: 30px;
-      margin: calc(.3em + .3vw);
-      margin-left: auto;
-      cursor: pointer;
-    }
-  }
-
-  h2 {
-    color: $col_MainText;
-    padding: 10px;
-  }
-
-  //*Modal
-  &.mobileView {
-    position: relative;
-    min-width: 100%;
-    transform: translate(0);
-    margin-top: 35px;
-    left: 0;
-
-    #close {
-      padding: calc(.3em + .3vw);
-
-      img {
-        margin: 0 0 0 auto;
-      }
-    }
-  }
-
-}
-
-
-
-.labels {
-  color: $col_MainText;
-}
-
-.formInput,
-#formTextArea {
-  display: block;
-  width: 100%;
-  padding: .375rem .75rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: $col_MainText;
-  background-color: transparent;
-  border: 1px solid #ced4da;
-  appearance: none;
-  border-radius: .5rem;
-
-  &:focus {
-    outline: 0;
-    box-shadow: 0 0 0 .3rem rgba($col_Navlink_GetInTouch, .5);
-
-    border-color: $col_Bg_GetInTouch;
-  }
-
-}
-
-#formTextArea {
-  min-width: 100%;
-  max-width: 100%;
-}
-
-#btnSubmit {
-  padding: .375rem 1rem;
-  background-color: transparent;
-  border: 2px solid #ced4da;
-  border-radius: .5rem;
-  width: 33%;
-  color: $col_MainText;
-  font-weight: 400;
-  font-size: 1rem;
-  transition-duration: .4s;
-  cursor: pointer;
-
-  &:hover,
-  &:active {
-    border-color: $col_Navlink_GetInTouch;
-  }
-}
-
-//Formtext error message
-.errorText {
-  color: #ccc;
-}
-
-//Formtext, when form is submitted
-.successText {
-  color: #ccc;
-  font-weight: 500;
-  display: block;
-  text-align: center;
-  line-height: 1.5;
 }
 
 /* #endregion */
