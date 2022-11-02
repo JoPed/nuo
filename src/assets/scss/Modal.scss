@@ -3,139 +3,142 @@
 //*Modal
 /* #region  Modal */
 #modal {
-    position: absolute;
-    min-width: 430px;
-    background-color: $col_Navlink_WhatWeDo;
-    left: 50%;
-    top: 5%;
-    transform: translate(-50%);
-    z-index: 99;
+  position: absolute;
+  min-width: 430px;
+  background-color: $col_Navlink_WhatWeDo;
+  left: 50%;
+  top: 5%;
+  transform: translate(-50%);
+  z-index: 99;
 
-    #close {
-        position: relative;
-        width: 100%;
+  #close {
+    position: relative;
+    width: 100%;
 
-        img {
-            position: relative;
-            width: 30px;
-            height: 30px;
-            margin: calc(.3em + .3vw);
-            margin-left: auto;
-            cursor: pointer;
-        }
+    img {
+      position: relative;
+      width: 30px;
+      height: 30px;
+      margin: calc(.3em + .3vw);
+      margin-left: auto;
+      cursor: pointer;
     }
+  }
 
-    h2 {
-        color: $col_MainText;
-        padding: 10px;
-    }
+  h2 {
+    color: $col_MainText;
+    padding: 10px;
+    word-wrap: break-word;
+  }
 }
 
-//Modal window on tablet and mobile. 
+//Modal window on tablet and mobile (using device not pixel to detect)
+//Check Modal.jsx for implementation 
 //Class is added to element #modal in Modal.jsx
 #modal.mobileView {
-    position: relative;
-    min-width: 430px;
-    max-width:430px;
-    transform: translate(0);
-    margin-top: 35px;
-    margin-inline: auto;
-    left: 0;
+  position: relative;
+  min-width: 430px;
+  max-width: 430px;
+  transform: translate(0);
+  margin-top: 35px;
+  margin-inline: auto;
+  left: 0;
 }
 
 .labels {
-    color: $col_MainText;
+  color: $col_MainText;
+}
+
+.formInput,
+#formTextArea {
+  display: block;
+  width: 100%;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $col_MainText;
+  background-color: transparent;
+  border: 1px solid #ced4da;
+  appearance: none;
+  border-radius: .5rem;
+
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 .3rem rgba($col_Navlink_GetInTouch, .5);
+
+    border-color: $col_Bg_GetInTouch;
   }
-  
-  .formInput,
-  #formTextArea {
-    display: block;
-    width: 100%;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: $col_MainText;
-    background-color: transparent;
-    border: 1px solid #ced4da;
-    appearance: none;
-    border-radius: .5rem;
-  
-    &:focus {
-      outline: 0;
-      box-shadow: 0 0 0 .3rem rgba($col_Navlink_GetInTouch, .5);
-  
-      border-color: $col_Bg_GetInTouch;
+
+}
+
+#formTextArea {
+  min-width: 100%;
+  max-width: 100%;
+}
+
+#btnSubmit {
+  padding: .375rem 1rem;
+  background-color: transparent;
+  border: 2px solid #ced4da;
+  border-radius: .5rem;
+  width: 33%;
+  color: $col_MainText;
+  font-weight: 400;
+  font-size: 1rem;
+  transition-duration: .4s;
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    border-color: $col_Navlink_GetInTouch;
+  }
+}
+
+//Formtext error message
+.errorText {
+  color: #ccc;
+}
+
+//Formtext, when form is submitted
+.successText {
+  color: #ccc;
+  font-weight: 500;
+  display: block;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* #endregion */
+
+@media only screen and (max-width: 767px) {
+
+  #modal {
+    position: relative;
+    min-width: 430px;
+    max-width: 430px;
+    margin: 35px auto;
+    transform: translate(0);
+    left: 0;
+
+    #close {
+      padding: calc(.3em + .3vw);
+
+      img {
+        margin: 0 0 0 auto;
+      }
     }
-  
   }
-  
-  #formTextArea {
+
+}
+
+@media only screen and (max-width: 575px) {
+
+  #modal,
+  #modal.mobileView {
     min-width: 100%;
     max-width: 100%;
   }
-  
-  #btnSubmit {
-    padding: .375rem 1rem;
-    background-color: transparent;
-    border: 2px solid #ced4da;
-    border-radius: .5rem;
-    width: 33%;
-    color: $col_MainText;
-    font-weight: 400;
-    font-size: 1rem;
-    transition-duration: .4s;
-    cursor: pointer;
-  
-    &:hover,
-    &:active {
-      border-color: $col_Navlink_GetInTouch;
-    }
-  }
-  
-  //Formtext error message
-  .errorText {
-    color: #ccc;
-  }
-  
-  //Formtext, when form is submitted
-  .successText {
-    color: #ccc;
-    font-weight: 500;
-    display: block;
-    text-align: center;
-    line-height: 1.5;
-  }
-  
-  /* #endregion */
 
-  @media only screen and (max-width: 767px) {
 
-    #modal {
-        position: relative;
-        min-width: 430px;
-        max-width: 430px;
-        margin: 35px auto;
-        transform: translate(0);
-        left: 0;
-    
-        #close {
-            padding: calc(.3em + .3vw);
-    
-            img {
-                margin: 0 0 0 auto;
-            }
-        }
-    }
-    
-  }
-
-  @media only screen and (max-width: 575px) {
-
-    #modal, #modal.mobileView {
-        min-width: 100%;
-        max-width: 100%;
-    }
-
-    
-  }
+}

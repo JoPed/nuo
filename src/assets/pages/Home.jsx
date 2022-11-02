@@ -11,7 +11,7 @@ const Home = ({ content }) => {
 
     return (
 
-        <Container fluid className="home px-0">
+        <Container fluid className="px-0" id="home">
 
 
             {/** Content container*/}
@@ -58,10 +58,10 @@ const Home = ({ content }) => {
                                                     srcSet={item.pcImg}
                                                 />
 
-                                                <img 
-                                                className="mx-auto" 
-                                                src={item.pcImg} 
-                                                alt={item.altText} />
+                                                <img
+                                                    className="mx-auto"
+                                                    src={item.pcImg}
+                                                    alt={item.altText} />
 
                                                 {/**Placing the more to come text box below the last image (which has an index value of 2)  */}
                                                 {index === 2 ?

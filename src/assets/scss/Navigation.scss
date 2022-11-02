@@ -1,7 +1,7 @@
+//*Check scss variables.scss in variables and mixins (functions) on mixins.scss
 @import "variables", "mixins";
 
 //* Navigation.js
-
 #navbar{
     margin-bottom: 35px;
     padding-top: 25px;
@@ -38,7 +38,9 @@
     background-color: $col_Navlink_WhatWeDo;
     position: relative;
 
+    //*Styling if on WhatWeDo page
     &.active::before {
+        //*Mixin
         @include navLinkActiveStyle($col_Navlink_WhatWeDo, false);
 
     }
@@ -48,6 +50,7 @@
     background-color: $col_Navlink_Maintainable;
     position: relative;
 
+    //*Styling if on Maintainable page
     &.active::before {
         @include navLinkActiveStyle($col_Navlink_Maintainable, false);
 
@@ -58,6 +61,7 @@
     background-color: $col_Navlink_GetInTouch;
     position: relative;
 
+    //*Styling if on GetInTouch page
     &.active::before {
         @include navLinkActiveStyle($col_Navlink_GetInTouch, false);
 
@@ -65,7 +69,7 @@
 }
 
 
-//*Media query
+//*Media query (767px = md breakpoint in bootstrap)
 @media only screen and (max-width: 767px) {
 
     #navbar{

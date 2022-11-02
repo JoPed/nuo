@@ -5,7 +5,7 @@ html {
   font-family: Tahoma, Geneva, Verdana, sans-serif;
 }
 
-//Resetting margin & padding on every element, setting box sizing
+//Resetting margin & padding on every element & setting box sizing
 *,
 *::after,
 *:before {
@@ -26,11 +26,6 @@ h2 {
 
   //Making sure that the font size scale with screen size. clamp(min, prefered, max)
   font-size: clamp(1rem, calc(1rem + 1vw), 3rem);
-}
-
-#modal h2 {
-  //break up the word if it is to long
-  word-wrap: break-word;
 }
 
 #secondHeadingWhatWeDo {
@@ -75,7 +70,7 @@ h2 {
 
 //* Home
 /* #region  Home */
-.home {
+#home {
   background: $col_Bg_Home;
   min-height: 100vh;
 }
@@ -122,7 +117,7 @@ h2 {
 
 /* #endregion */
 
-//*Styles for all subpages
+//*Shared styles subpages (min. 2 pages with same style)
 /* #region Styles for all subpages  */
 .pageImageCol {
   margin-left: 80px;
@@ -136,14 +131,24 @@ h2 {
 .nuoLogoSubPages {
   width: 125px;
   z-index: 1;
-  // margin-bottom: 15px;
 }
 
-.logo-row {
-  position: absolute;
-  right: 2%;
-  bottom: 2%;
+//*Firefox browser and chrome browser handles height of content diffrently. 
+//*Check GetInTouch.jsx, Maintainable.jsx, WhatWeDo.jsx for implementation
+/* #region  Firefox / Chrome specific styling */
+#maintainableContainer .row .isFirefox,
+#whatwedoContainer .row .isFirefox {
+  padding-bottom: 0;
+  margin-bottom: -.45rem;
+
 }
+
+#maintainableContainer .row .isChrome,
+#whatwedoContainer .row .isChrome {
+  padding-bottom: 2rem;
+}
+
+/* #endregion */
 
 /* #endregion */
 
@@ -152,9 +157,7 @@ h2 {
 #whatwedoContainer {
   background-color: $col_Bg_WhatWeDo;
   min-height: 100vh;
-
   position: relative;
-  
 }
 
 /* #endregion */
@@ -168,7 +171,6 @@ h2 {
 
 }
 
-
 //*GetInTouch
 /* #region GetInTouch  */
 #getInTouchContainer {
@@ -177,8 +179,20 @@ h2 {
 
   position: relative;
 
-
 }
+
+//*Firefox browser and chrome browser handles height of content diffrently. 
+//*Check GetInTouch.jsx, Maintainable.jsx, WhatWeDo.jsx for implementation
+/* #region  Firefox / Chrome specific styling */
+#getInTouchContainer .row .isFirefox {
+  padding-bottom: 3rem;
+}
+
+#getInTouchContainer .row .isChrome {
+  padding-bottom: 4.4rem;
+}
+
+/* #endregion */
 
 #getInTouchArticle {
   position: relative;
@@ -192,6 +206,7 @@ h2 {
     cursor: pointer;
   }
 }
+
 
 .employeeCaption {
   position: absolute;

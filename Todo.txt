@@ -1,3 +1,0 @@
-1: Remove fixed height for compoments when in tablet view and below
-2: Fix srcset images (three subpages)
- 

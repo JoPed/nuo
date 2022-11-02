@@ -6,17 +6,24 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+import { browserName } from 'react-device-detect';
+
 //* Subpage Maintainable
 const Maintainable = ({ content }) => {
 
+    const getBrowserName = (browser) => {
+        return (browser === "Chrome" ? "isChrome" : "isFirefox")
+    }
+
     return (
         <Container fluid id="maintainableContainer">
+
 
             {/**Content container */}
             <Container fluid="lg">
 
                 {/** Subpage navigation 
-                 * (the three box and the image (to navigate between pages) */}
+                    * (the three box and the image (to navigate between pages) */}
                 <Navigation />
 
                 {/** Row of front image and text */}
@@ -26,7 +33,7 @@ const Maintainable = ({ content }) => {
                         <figure className="pageImages">
 
                             {/** Choose the correct image depending on screen size. 
-                             * Default if something goes wrong will be the src from <img /> element */}
+                                    * Default if something goes wrong will be the src from <img /> element */}
                             <picture>
                                 <source
                                     media="(max-width: 767px)"
@@ -49,13 +56,16 @@ const Maintainable = ({ content }) => {
                     </Col>
 
                     {/**Column of text */}
-                    <Col md={7}
-                        className="mt-2 mt-md-0 pb-5 pb-md-0"
+                    <Col
+                        xs={12}
+                        md={7}
+                        className={`${getBrowserName(browserName)} 
+                        mt-2 mt-md-0 pb-md-0`}
                     >
 
                         <article>
                             {/* Take the first element of heading array inside content.json and directly inside h2, 
-                            then take second element of heading array and put into a span tag to change it's color. */}
+                                    then take second element of heading array and put into a span tag to change it's color. */}
                             {
                                 <h2>{content.headings[0]}
                                     <span id="secondHeadingMaintainable">
@@ -81,7 +91,7 @@ const Maintainable = ({ content }) => {
 
             </Container>
 
-            <Row className="logo-row">
+            <Row className="justify-content-end mt-3 pb-2">
                 {/**logo, but only show on screens below 768px*/}
                 <figure className="nuoLogoSubPages d-md-none">
                     <img src="/assets/images/mobile/logo-a.png"
@@ -89,6 +99,7 @@ const Maintainable = ({ content }) => {
 
                     />
                 </figure>
+
             </Row>
 
         </Container>
