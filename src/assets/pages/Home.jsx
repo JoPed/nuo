@@ -25,7 +25,7 @@ const Home = ({ content }) => {
 
                     <figure id="nuoLogo">
                         <img
-                            src="assets/images/logo-final.png"
+                            src={`${process.env.PUBLIC_URL}/assets/images/logo-final.png`}
                             alt="Nuo logo"
                         />
                     </figure>
@@ -50,17 +50,17 @@ const Home = ({ content }) => {
                                                 {/** Depending on screensize use the correct image */}
                                                 <source
                                                     media="(max-width: 767px)"
-                                                    srcSet={item.mobileImg}
+                                                    srcSet={process.env.PUBLIC_URL+item.mobileImg}
                                                 />
 
                                                 <source
                                                     media="(min-width: 768px)"
-                                                    srcSet={item.pcImg}
+                                                    srcSet={process.env.PUBLIC_URL+item.pcImg}
                                                 />
 
                                                 <img
                                                     className="mx-auto"
-                                                    src={item.pcImg}
+                                                    src={process.env.PUBLIC_URL+item.pcImg}
                                                     alt={item.altText} />
 
                                                 {/**Placing the more to come text box below the last image (which has an index value of 2)  */}

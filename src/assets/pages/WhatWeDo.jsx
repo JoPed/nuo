@@ -10,6 +10,8 @@ import { browserName } from 'react-device-detect';
 
 const WhatWeDo = ({ content }) => {
 
+    console.log(process.env.PUBLIC_URL);
+
     const getBrowserName = (browser) => {
         return (browser === "Chrome" ? "isChrome" : "isFirefox")
     }
@@ -35,16 +37,16 @@ const WhatWeDo = ({ content }) => {
                             <picture>
                                 <source
                                     media="(max-width: 767px)"
-                                    srcSet="/assets/images/mobile/mobil-whatwedo.png"
+                                    srcSet={`${process.env.PUBLIC_URL}/assets/images/mobile/mobil-whatwedo.png`}
                                 />
 
                                 <source
                                     media="(min-width: 768px)"
-                                    srcSet="/assets/images/desktop/front-whatwedo.png"
+                                    srcSet={`${process.env.PUBLIC_URL}/assets/images/desktop/front-whatwedo.png`}
                                 />
 
                                 <img
-                                    src="/assets/images/desktop/front-whatwedo.png"
+                                    src={`${process.env.PUBLIC_URL}/assets/images/desktop/front-whatwedo.png`}
                                     alt="What We Do banner"
                                 />
                             </picture>
@@ -93,7 +95,7 @@ const WhatWeDo = ({ content }) => {
             <Row className="justify-content-end mt-3 pb-2">
                 {/**logo, but only show on screens below 768px*/}
                 <figure className="nuoLogoSubPages d-md-none">
-                    <img src="/assets/images/mobile/logo-a.png"
+                    <img src={`${process.env.PUBLIC_URL}/assets/images/mobile/logo-a.png`}
                         alt="Nuo logo"
 
                     />

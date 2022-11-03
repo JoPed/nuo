@@ -86,7 +86,7 @@ const Modal = ({ isModalOpen, closeModal, employeeNames }) => {
             {/**Close icon */}
             <div id="close">
 
-                <img src="/assets/images/close.svg"
+                <img src="./assets/images/close.svg"
                     alt="Close the modal window"
                     onClick={closeModal}
                 />

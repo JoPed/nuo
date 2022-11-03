@@ -22,7 +22,7 @@ const Navigation = () => {
             <ul id="navlist">
                 <li>
                     <img
-                        src="/assets/images/back.svg"
+                        src="./assets/images/back.svg"
                         alt="Back to home"
                         onClick={goToHome} />
                 </li>
