@@ -18,7 +18,7 @@ import UseFetch from './assets/components/UseFetch';
 function App() {
 
   //data now contains all the data from content.json
-  const [data] = UseFetch('/assets/content.json');
+  const [data] = UseFetch('./assets/content.json');
 
   return (
     <Router>
