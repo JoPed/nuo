@@ -1,13 +1,25 @@
 //React router dom
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 //React bootstrap imports - this is the recommended way to import them
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { useEffect } from 'react';
+
 
 //*Landingpage
 const Home = ({ content }) => {
+
+    const location = useLocation();
+
+    useEffect(() =>{
+
+        if(location === "home"){
+            console.log("Location er home")
+        }    
+
+    })
 
     return (
 
@@ -17,6 +29,7 @@ const Home = ({ content }) => {
             {/** Content container*/}
             <Container fluid="lg" className="px-0">
 
+
                 {/** Navbar - containing images not text  */}
                 <nav
                     className="container-fluid"
@@ -25,7 +38,7 @@ const Home = ({ content }) => {
 
                     <figure id="nuoLogo">
                         <img
-                            src={`${process.env.PUBLIC_URL}/assets/images/logo-final.png`}
+                            src="/assets/images/logo-final.webp"
                             alt="Nuo logo"
                         />
                     </figure>
@@ -50,17 +63,17 @@ const Home = ({ content }) => {
                                                 {/** Depending on screensize use the correct image */}
                                                 <source
                                                     media="(max-width: 767px)"
-                                                    srcSet={process.env.PUBLIC_URL+item.mobileImg}
+                                                    srcSet={item.mobileImg}
                                                 />
 
                                                 <source
                                                     media="(min-width: 768px)"
-                                                    srcSet={process.env.PUBLIC_URL+item.pcImg}
+                                                    srcSet={item.pcImg}
                                                 />
 
                                                 <img
                                                     className="mx-auto"
-                                                    src={process.env.PUBLIC_URL+item.pcImg}
+                                                    src={item.pcImg}
                                                     alt={item.altText} />
 
                                                 {/**Placing the more to come text box below the last image (which has an index value of 2)  */}

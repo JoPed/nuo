@@ -3,24 +3,24 @@
         {
             "home": [
                 {
-                    "pcImg": "/assets/images/desktop/front-whatwedo-link.png",
-                    "mobileImg": "/assets/images/mobile/mobil-whatwedo.png",
+                    "pcImg": "/assets/images/desktop/front-whatwedo-link.webp",
+                    "mobileImg": "/assets/images/mobile/mobil-whatwedo.webp",
                     "altText":  "What We Do",
                     "linkRef": "/whatwedo",
                     "uniqueID": "whatwedo"
 
                 },
                 {
-                    "pcImg":  "/assets/images/desktop/front-maintainable-link.png",
-                    "mobileImg": "/assets/images/mobile/mobil-maintainable.png",
+                    "pcImg":  "/assets/images/desktop/front-maintainable-link.webp",
+                    "mobileImg": "/assets/images/mobile/mobil-maintainable.webp",
                     "altText":  "MaintainAble",
                     "linkRef": "/maintainable",
                     "uniqueID": "maintainable"
 
                 },
                 {
-                    "pcImg": "/assets/images/desktop/front-getintouch-link.png",
-                    "mobileImg": "/assets/images/mobile/mobil-getintouch.png",
+                    "pcImg": "/assets/images/desktop/front-getintouch-link.webp",
+                    "mobileImg": "/assets/images/mobile/mobil-getintouch.webp",
                     "altText":  "Get In Touch",
                     "linkRef": "/getintouch",
                     "uniqueID": "getintouch"
@@ -48,7 +48,7 @@
             "employeeNames": ["Lonnie", "Pernille", "Morten"],
             "employeeImages": [
                 {
-                    "img": "./assets/images/desktop/whatwedo-small.png",
+                    "img": "./assets/images/desktop/whatwedo-small.webp",
                     "altText":  "Get in touch with Employee 1",
                     "figCaption": "lt@coolish.com",
                     "uniqueID": "Employee1",
@@ -56,7 +56,7 @@
                     "colOffset": 3
                 },
                 {
-                    "img": "./assets/images/desktop/maintainable-small.png",
+                    "img": "./assets/images/desktop/maintainable-small.webp",
                     "altText":  "Get in touch with Employee 2",
                     "figCaption": "pr@coolish.com",
                     "uniqueID": "Employee2",
@@ -64,7 +64,7 @@
                     "colOffset": 0
                 },
                 {
-                    "img": "./assets/images/desktop/getintouch-small.png",
+                    "img": "./assets/images/desktop/getintouch-small.webp",
                     "altText":  "Get in touch with Employee 3",
                     "figCaption": "mn@coolish.com",
                     "uniqueID": "Employee3",
@@ -72,6 +72,25 @@
                     "colOffset": 0
                 }
             ]
+        }
+    ],
+    "navigation": [
+        {
+            "linkRef": "/whatwedo",
+            "listItemClassNames": "ms-auto ms-md-0",
+            "linkClassNames": "navlink navlink--WhatWeDo",
+            "uniqueID": "LinkWhatwedo"
+
+        },
+        {
+            "linkRef": "/maintainable",
+            "linkClassNames": "navlink navlink--Maintainable",
+            "uniqueID": "LinkMaintainable"
+        },
+        {
+            "linkRef": "/getintouch",
+            "linkClassNames": "navlink navlink--GetInTouch",
+            "uniqueID": "LinkGetintouch"
         }
     ]
 }

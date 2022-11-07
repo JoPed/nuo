@@ -5,15 +5,19 @@ import './assets/css/App.min.css';
 //React router dom imports
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+
+
 //Pages
 import Home from './assets/pages/Home';
+
 import GetInTouch from './assets/pages/GetInTouch';
 import WhatWeDo from './assets/pages/WhatWeDo';
 import Maintainable from './assets/pages/Maintainable';
 
+
 //Components
 import UseFetch from './assets/components/UseFetch';
-import { useEffect } from 'react';
+import Navigation from './assets/components/Navigation';
 
 
 function App() {
@@ -21,22 +25,17 @@ function App() {
   //data now contains all the data from content.json
   const [data] = UseFetch('./assets/content.json');
 
-  console.log(process.env.PUBLIC_URL);
 
-  useEffect(() => {
-
-    console.log(process.env.PUBLIC_URL);
-
-  }, []);
-
-  // basename="/Projects/build"
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router >
 
-      <Routes>
+      {/* {data && <Navigation navData={data.navigation} />} */}
+      
+
+      <Routes >
         {/**Only send data via the props, when it exists. Only sending the data needed for the specific component, not the whole data object */}
 
-        <Route path="/*"
+        <Route path="/"
           element={data && <Home content={data.content[0]} />}
         />
 
@@ -52,11 +51,8 @@ function App() {
           element={data && <GetInTouch content={data.content[3]} />}
         />
 
-        
-
-
       </Routes>
-    </Router>
+    </Router >
   );
 }
 

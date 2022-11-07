@@ -1,17 +1,10 @@
 //React router dom
-import { useNavigate, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 //Minified css (compiled from SCSS)
 import "../css/Navigation.min.css";
 
 const Navigation = () => {
-
-    const navigate = useNavigate();
-
-    const goToHome = () => {
-
-        navigate("/");
-    }
 
     return (
         <nav id="navbar">
@@ -21,10 +14,13 @@ const Navigation = () => {
 
             <ul id="navlist">
                 <li>
-                    <img
-                        src="./assets/images/back.svg"
-                        alt="Back to home"
-                        onClick={goToHome} />
+                    <NavLink to="/">
+                        <img
+                            src="./assets/images/back.svg"
+                            alt="Back to home"
+                        />
+                    </NavLink>
+
                 </li>
 
                 <li className="ms-auto ms-md-0">
@@ -32,7 +28,6 @@ const Navigation = () => {
                         className="navlink navlink--WhatWeDo">
                     </NavLink>
                 </li>
-
                 <li>
                     <NavLink to="/maintainable"
                         className="navlink navlink--Maintainable">
@@ -44,6 +39,7 @@ const Navigation = () => {
                         className="navlink navlink--GetInTouch">
                     </NavLink>
                 </li>
+
             </ul>
         </nav>
     );

@@ -78,15 +78,15 @@ const GetInTouch = ({ content }) => {
                                 <picture >
                                     <source
                                         media="(max-width: 767px)"
-                                        srcSet={`./assets/images/mobile/mobil-getintouch.png`}
+                                        srcSet="./assets/images/mobile/mobil-getintouch.webp"
                                          />
 
                                     <source
                                         media="(min-width: 768px)"
-                                        srcSet={`./assets/images/desktop/front-getintouch.png`} />
+                                        srcSet="./assets/images/desktop/front-getintouch.webp" />
 
                                     <img
-                                        src={`${process.env.PUBLIC_URL}/assets/images/desktop/front-getintouch.png`}
+                                        src="/assets/images/desktop/front-getintouch.webp"
                                         alt="Get In Touch banner"
                                     />
 
@@ -166,7 +166,7 @@ const GetInTouch = ({ content }) => {
 
                 {/**logo, but only show on screens below 768px*/}
                 <figure className="nuoLogoSubPages d-md-none">
-                    <img src={`${process.env.PUBLIC_URL}/assets/images/mobile/logo-b.png`}
+                    <img src="/assets/images/mobile/logo-b.webp"
                         alt="Nuo logo"
                     />
                 </figure>

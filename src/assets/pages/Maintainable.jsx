@@ -37,16 +37,16 @@ const Maintainable = ({ content }) => {
                             <picture>
                                 <source
                                     media="(max-width: 767px)"
-                                    srcSet={`${process.env.PUBLIC_URL}/assets/images/mobile/mobil-maintainable.png`}
+                                    srcSet="/assets/images/mobile/mobil-maintainable.webp"
                                 />
 
                                 <source
                                     media="(min-width: 768px)"
-                                    srcSet={`${process.env.PUBLIC_URL}/assets/images/desktop/front-maintainable.png`}
+                                    srcSet="/assets/images/desktop/front-maintainable.webp"
                                 />
 
                                 <img
-                                    src={`${process.env.PUBLIC_URL}/assets/images/desktop/front-maintainable.png`}
+                                    src="/assets/images/desktop/front-maintainable.webp"
                                     alt="Maintainable banner"
                                 />
                             </picture>
@@ -94,7 +94,7 @@ const Maintainable = ({ content }) => {
             <Row className="justify-content-end mt-3 pb-2">
                 {/**logo, but only show on screens below 768px*/}
                 <figure className="nuoLogoSubPages d-md-none">
-                    <img src={`${process.env.PUBLIC_URL}/assets/images/mobile/logo-a.png`}
+                    <img src="/assets/images/mobile/logo-a.webp"
                         alt="Nuo logo"
 
                     />
