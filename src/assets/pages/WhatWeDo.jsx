@@ -1,28 +1,35 @@
-//Components
-import Navigation from '../components/Navigation';
-
 //React-Bootstrap
-import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import { browserName } from 'react-device-detect';
+import { useEffect, useContext } from 'react';
+
+import { ContainerRefContext } from '../../App';
 
 const WhatWeDo = ({ content }) => {
+
+    const containerRef = useContext(ContainerRefContext);
 
     const getBrowserName = (browser) => {
         return (browser === "Chrome" ? "isChrome" : "isFirefox")
     }
 
+    useEffect(() => {
+        containerRef.current.id = "whatwedoContainer";
+
+        return () => {
+            containerRef.current.id = "";
+        }
+    })
+
     return (
-        <Container fluid id="whatwedoContainer">
+        <>
 
 
-            {/**Content container */}
-            <Container fluid="lg">
 
                 {/** Subpage navigation (the three box and the image (to navigate between pages) */}
-                <Navigation />
+                {/* <Navigation /> */}
 
                 {/** Row of front image and text */}
                 <Row>
@@ -87,7 +94,6 @@ const WhatWeDo = ({ content }) => {
                     </Col>
                 </Row>
 
-            </Container>
 
 
             <Row className="justify-content-end mt-3 pb-2">
@@ -101,7 +107,7 @@ const WhatWeDo = ({ content }) => {
 
             </Row>
 
-        </Container>
+        </>
     )
 
 }

@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 //Minified css (compiled from SCSS)
 import "../css/Navigation.min.css";
 
-const Navigation = () => {
+const Navigation = ({navData}) => {
 
     return (
         <nav id="navbar">
@@ -23,22 +23,18 @@ const Navigation = () => {
 
                 </li>
 
-                <li className="ms-auto ms-md-0">
-                    <NavLink to="/whatwedo"
-                        className="navlink navlink--WhatWeDo">
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink to="/maintainable"
-                        className="navlink navlink--Maintainable">
-                    </NavLink>
-                </li>
+                {
+                    navData.map(navItem => (
+                        <li 
+                        key={navItem.uniqueID}
+                        className={navItem.hasOwnProperty("listItemClassNames") ? 
+                        navItem.listItemClassNames : ""}>
 
-                <li>
-                    <NavLink to="/getintouch"
-                        className="navlink navlink--GetInTouch">
-                    </NavLink>
-                </li>
+                            <NavLink to={navItem.linkRef} className={navItem.linkClassNames} />
+
+                        </li>
+                    ))
+                }
 
             </ul>
         </nav>

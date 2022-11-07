@@ -1,16 +1,16 @@
 //Components
-import Navigation from '../components/Navigation';
 import Modal from '../components/Modal';
 
 //React-bootstrap
-import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 //React
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useContext } from 'react';
 
 import { isMobile, isTablet, isDesktop, browserName } from 'react-device-detect';
+
+import { ContainerRefContext } from '../../App';
 
 //* Subpage GetInTouch
 const GetInTouch = ({ content }) => {
@@ -21,7 +21,11 @@ const GetInTouch = ({ content }) => {
 
     const employeePortraitRef = useRef([]);
 
+    const containerRef = useContext(ContainerRefContext)
+
     useEffect(() => {
+
+        containerRef.current.id = "getInTouchContainer";
 
         /*Make sure desktop versions of the employeePortrait element have css class enablePointer
             And that is not on  employeePortrait elements for tablet and mobile */
@@ -43,6 +47,10 @@ const GetInTouch = ({ content }) => {
             }
         })
 
+        return () => {
+            containerRef.current.id = "";
+        }
+
     }, [])
 
     /** When one of the employee images is pressed open the modal window */
@@ -55,111 +63,109 @@ const GetInTouch = ({ content }) => {
     /** When close button is pressed, close the modal */
     const closeModal = () => setIsModalOpen(false);
 
-    const getBrowserName = (browser)=>{
+    const getBrowserName = (browser) => {
         return (browser === "Chrome" ? "isChrome" : "isFirefox")
     }
 
 
     return (
 
-        <Container fluid id="getInTouchContainer"> {/** Parent container with background color and height  */}
-                <Container fluid="lg">
+        <>
 
-                    {/** Subpage navigation (the three box and the image (to navigate between pages) */}
-                    <Navigation />
 
-                    {/** Parent Row element for images and text  */}
-                    <Row>
+            {/** Subpage navigation (the three box and the image (to navigate between pages) */}
+            {/* <Navigation /> */}
 
-                        {/** Parent column element with the big front image*/}
-                        <Col md={3} className="pageImageCol">
-                            <figure className="pageImages">
+            {/** Parent Row element for images and text  */}
+            <Row>
 
-                                <picture >
-                                    <source
-                                        media="(max-width: 767px)"
-                                        srcSet="./assets/images/mobile/mobil-getintouch.webp"
-                                         />
+                {/** Parent column element with the big front image*/}
+                <Col md={3} className="pageImageCol">
+                    <figure className="pageImages">
 
-                                    <source
-                                        media="(min-width: 768px)"
-                                        srcSet="./assets/images/desktop/front-getintouch.webp" />
+                        <picture >
+                            <source
+                                media="(max-width: 767px)"
+                                srcSet="./assets/images/mobile/mobil-getintouch.webp"
+                            />
 
-                                    <img
-                                        src="/assets/images/desktop/front-getintouch.webp"
-                                        alt="Get In Touch banner"
-                                    />
+                            <source
+                                media="(min-width: 768px)"
+                                srcSet="./assets/images/desktop/front-getintouch.webp" />
 
-                                </picture>
+                            <img
+                                src="/assets/images/desktop/front-getintouch.webp"
+                                alt="Get In Touch banner"
+                            />
 
-                            </figure>
+                        </picture>
 
-                        </Col>
+                    </figure>
 
-                        {/*Parent column with article as child */}
-                        <Col xs={12} md={7} 
-                        className={`${getBrowserName(browserName)} 
+                </Col>
+
+                {/*Parent column with article as child */}
+                <Col xs={12} md={7}
+                    className={`${getBrowserName(browserName)} 
                         mt-2 mt-md-0 pb-md-0`}>
 
-                            <article id="getInTouchArticle">
+                    <article id="getInTouchArticle">
 
-                                {/*Heading */}
-                                {
-                                    <h2>{content.headings[0]}
-                                        <span id="secondHeadingGetInTouch">
-                                            {content.headings[1]}
-                                        </span>
-                                        ...</h2>}
-
-                                {/* The text content */}
-                                <p className="mainText">
-                                    {content.paragraphs.map(item => item)}
-                                </p>
-
-                                {/* A row inside article. Has the employee images a chrildren */}
-                                <Row className="mt-4 justify-content-center justify-content-lg-start">
-
-                                    {/* Takes the data from content.json and iterates the employeeImages array */}
-                                    {content.employeeImages.map((item, index) => (
-
-                                        <Col xs={3}
-                                            lg={{ span: 2, offset: item.colOffset }}
-                                            className={item.colClassNames}
-                                            key={item.uniqueID}>
-
-                                            {/** using ref to make an useRef array, to store multiple employeePortrait images */}
-                                            <figure className="employeePortrait"
-                                                ref={ref => (employeePortraitRef.current[index] = ref)}
-                                            >
-                                                <img
-                                                    src={item.img}
-                                                    alt={item.altText}
-                                                    data-index={employeeCount}
-                                                    onClick={openModal}
-                                                    draggable="false"
-                                                />
-
-                                                <figcaption className="employeeCaption">
-                                                    {item.figCaption}
-                                                </figcaption>
-                                            </figure>
-
-
-                                        </Col>
-                                    ))}
-                                </Row>
-
-                                {/*The text box */}
-                                <span className="titleGetInTouch d-none d-lg-block">
-                                    {content.title}
+                        {/*Heading */}
+                        {
+                            <h2>{content.headings[0]}
+                                <span id="secondHeadingGetInTouch">
+                                    {content.headings[1]}
                                 </span>
+                                ...</h2>}
 
-                            </article>
-                        </Col>
+                        {/* The text content */}
+                        <p className="mainText">
+                            {content.paragraphs.map(item => item)}
+                        </p>
 
-                    </Row>
+                        {/* A row inside article. Has the employee images a chrildren */}
+                        <Row className="mt-4 justify-content-center justify-content-lg-start">
 
-                </Container>
+                            {/* Takes the data from content.json and iterates the employeeImages array */}
+                            {content.employeeImages.map((item, index) => (
+
+                                <Col xs={3}
+                                    lg={{ span: 2, offset: item.colOffset }}
+                                    className={item.colClassNames}
+                                    key={item.uniqueID}>
+
+                                    {/** using ref to make an useRef array, to store multiple employeePortrait images */}
+                                    <figure className="employeePortrait"
+                                        ref={ref => (employeePortraitRef.current[index] = ref)}
+                                    >
+                                        <img
+                                            src={item.img}
+                                            alt={item.altText}
+                                            data-index={employeeCount}
+                                            onClick={openModal}
+                                            draggable="false"
+                                        />
+
+                                        <figcaption className="employeeCaption">
+                                            {item.figCaption}
+                                        </figcaption>
+                                    </figure>
+
+
+                                </Col>
+                            ))}
+                        </Row>
+
+                        {/*The text box */}
+                        <span className="titleGetInTouch d-none d-lg-block">
+                            {content.title}
+                        </span>
+
+                    </article>
+                </Col>
+
+            </Row>
 
 
             <Row className="justify-content-end mt-3 pb-2">
@@ -181,7 +187,7 @@ const GetInTouch = ({ content }) => {
             />
 
 
-        </Container>
+        </>
 
     )
 
