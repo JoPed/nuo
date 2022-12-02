@@ -19,13 +19,13 @@ const Home = ({ content}) => {
 
     useEffect(() => {
 
-        console.log(location)
 
         if(location.pathname === "/"){
             document.querySelector("#navbar").style.display = "none";
         }
 
         containerRef.current.id = "home";
+        // console.log(containerRef.current.firstChild);
 
         return () => {
             containerRef.current.id = "";
@@ -103,6 +103,8 @@ const Home = ({ content}) => {
                 </ul>
 
             </nav>
+
+            <footer id="mainFooter">Made by Jonas Bjørn Pedersen &copy;</footer>
 
 
         </>

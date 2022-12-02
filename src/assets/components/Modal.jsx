@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 
-import { isMobile, isTablet, isDesktop, } from 'react-device-detect';
+import { isMobile, isTablet, isDesktop } from 'react-device-detect';
 
 
 //React bootstrap - bootstrap

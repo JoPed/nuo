@@ -142,7 +142,7 @@ const GetInTouch = ({ content }) => {
                                         <img
                                             src={item.img}
                                             alt={item.altText}
-                                            data-index={employeeCount}
+                                            data-index={index}
                                             onClick={openModal}
                                             draggable="false"
                                         />

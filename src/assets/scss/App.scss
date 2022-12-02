@@ -73,6 +73,10 @@ h2 {
 #home {
   background: $col_Bg_Home;
   min-height: 100vh;
+
+   .container-lg{
+    position: relative;
+   }
 }
 
 //the navigation from the landingpage, with the images
@@ -221,6 +225,17 @@ h2 {
 
 /* #endregion */
 
+//*Footer
+#mainFooter{
+  width: 100%;
+  background-color: transparent;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin-bottom: 1rem;
+}
+
 //*Media query
 /* #region  Media queries */
 @media only screen and (max-width: 1199px) {
@@ -244,6 +259,7 @@ h2 {
   }
 
 }
+
 
 @media only screen and (max-width: 991px) {
 

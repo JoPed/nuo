@@ -47,7 +47,6 @@ function App() {
               {/**Only send data via the props, when it exists. Only sending the data needed for the specific component, not the whole data object */}
 
 
-
               <Route path="/"
                 element={data && <Home content={data.content[0]} />}
               />
